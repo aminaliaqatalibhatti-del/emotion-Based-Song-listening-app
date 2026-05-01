@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://onecompiler.com/javascript/44mz8shbr -->
+<html lang="en" class="light" style="color-scheme: light;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="ace_searchbox">
+
+/* ------------------------------------------------------------------------------------------
+ * Editor Search Form
+ * --------------------------------------------------------------------------------------- */
+.ace_search {
+    background-color: #ddd;
+    color: #666;
+    border: 1px solid #cbcbcb;
+    border-top: 0 none;
+    overflow: hidden;
+    margin: 0;
+    padding: 4px 6px 0 4px;
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    white-space: normal;
+}
+.ace_search.left {
+    border-left: 0 none;
+    border-radius: 0px 0px 5px 0px;
+    left: 0;
+}
+.ace_search.right {
+    border-radius: 0px 0px 0px 5px;
+    border-right: 0 none;
+    right: 0;
+}
+
+.ace_search_form, .ace_replace_form {
+    margin: 0 20px 4px 0;
+    overflow: hidden;
+    line-height: 1.9;
+}
+.ace_replace_form {
+    margin-right: 0;
+}
+.ace_search_form.ace_nomatch {
+    outline: 1px solid red;
+}
+
+.ace_search_field {
+    border-radius: 3px 0 0 3px;
+    background-color: white;
+    color: black;
+    border: 1px solid #cbcbcb;
+    border-right: 0 none;
+    outline: 0;
+    padding: 0;
+    font-size: inherit;
+    margin: 0;
+    line-height: inherit;
+    padding: 0 6px;
+    min-width: 17em;
+    vertical-align: top;
+    min-height: 1.8em;
+    box-sizing: content-box;
+}
+.ace_searchbtn {
+    border: 1px solid #cbcbcb;
+    line-height: inherit;
+    display: inline-block;
+    padding: 0 6px;
+    background: #fff;
+    border-right: 0 none;
+    border-left: 1px solid #dcdcdc;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+    color: #666;
+}
+.ace_searchbtn:last-child {
+    border-radius: 0 3px 3px 0;
+    border-right: 1px solid #cbcbcb;
+}
+.ace_searchbtn:disabled {
+    background: none;
+    cursor: default;
+}
+.ace_searchbtn:hover {
+    background-color: #eef1f6;
+}
+.ace_searchbtn.prev, .ace_searchbtn.next {
+     padding: 0px 0.7em
+}
+.ace_searchbtn.prev:after, .ace_searchbtn.next:after {
+     content: "";
+     border: solid 2px #888;
+     width: 0.5em;
+     height: 0.5em;
+     border-width:  2px 0 0 2px;
+     display:inline-block;
+     transform: rotate(-45deg);
+}
+.ace_searchbtn.next:after {
+     border-width: 0 2px 2px 0 ;
+}
+.ace_searchbtn_close {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAcCAYAAABRVo5BAAAAZ0lEQVR42u2SUQrAMAhDvazn8OjZBilCkYVVxiis8H4CT0VrAJb4WHT3C5xU2a2IQZXJjiQIRMdkEoJ5Q2yMqpfDIo+XY4k6h+YXOyKqTIj5REaxloNAd0xiKmAtsTHqW8sR2W5f7gCu5nWFUpVjZwAAAABJRU5ErkJggg==) no-repeat 50% 0;
+    border-radius: 50%;
+    border: 0 none;
+    color: #656565;
+    cursor: pointer;
+    font: 16px/16px Arial;
+    padding: 0;
+    height: 14px;
+    width: 14px;
+    top: 9px;
+    right: 7px;
+    position: absolute;
+}
+.ace_searchbtn_close:hover {
+    background-color: #656565;
+    background-position: 50% 100%;
+    color: white;
+}
+
+.ace_button {
+    margin-left: 2px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+    opacity: 0.7;
+    border: 1px solid rgba(100,100,100,0.23);
+    padding: 1px;
+    box-sizing:    border-box!important;
+    color: black;
+}
+
+.ace_button:hover {
+    background-color: #eee;
+    opacity:1;
+}
+.ace_button:active {
+    background-color: #ddd;
+}
+
+.ace_button.checked {
+    border-color: #3399ff;
+    opacity:1;
+}
+
+.ace_search_options{
+    margin-bottom: 3px;
+    text-align: right;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    clear: both;
+}
+
+.ace_search_counter {
+    float: left;
+    font-family: arial;
+    padding: 0 8px;
+}
+/*# sourceURL=ace/css/ace_searchbox */</style><style id="autocompletion.css">
+.ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line {
+    background-color: #CAD6FA;
+    z-index: 1;
+}
+.ace_dark.ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line {
+    background-color: #3a674e;
+}
+.ace_editor.ace_autocomplete .ace_line-hover {
+    border: 1px solid #abbffe;
+    margin-top: -1px;
+    background: rgba(233,233,253,0.4);
+    position: absolute;
+    z-index: 2;
+}
+.ace_dark.ace_editor.ace_autocomplete .ace_line-hover {
+    border: 1px solid rgba(109, 150, 13, 0.8);
+    background: rgba(58, 103, 78, 0.62);
+}
+.ace_completion-meta {
+    opacity: 0.5;
+    margin-left: 0.9em;
+}
+.ace_completion-message {
+    margin-left: 0.9em;
+    color: blue;
+}
+.ace_editor.ace_autocomplete .ace_completion-highlight{
+    color: #2d69c7;
+}
+.ace_dark.ace_editor.ace_autocomplete .ace_completion-highlight{
+    color: #93ca12;
+}
+.ace_editor.ace_autocomplete {
+    width: 300px;
+    z-index: 200000;
+    border: 1px lightgray solid;
+    position: fixed;
+    box-shadow: 2px 3px 5px rgba(0,0,0,.2);
+    line-height: 1.4;
+    background: #fefefe;
+    color: #111;
+}
+.ace_dark.ace_editor.ace_autocomplete {
+    border: 1px #484747 solid;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.51);
+    line-height: 1.4;
+    background: #25282c;
+    color: #c1c1c1;
+}
+.ace_autocomplete .ace_text-layer  {
+    width: calc(100% - 8px);
+}
+.ace_autocomplete .ace_line {
+    display: flex;
+    align-items: center;
+}
+.ace_autocomplete .ace_line > * {
+    min-width: 0;
+    flex: 0 0 auto;
+}
+.ace_autocomplete .ace_line .ace_ {
+    flex: 0 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ace_autocomplete .ace_completion-spacer {
+    flex: 1;
+}
+.ace_autocomplete.ace_loading:after  {
+    content: "";
+    position: absolute;
+    top: 0px;
+    height: 2px;
+    width: 8%;
+    background: blue;
+    z-index: 100;
+    animation: ace_progress 3s infinite linear;
+    animation-delay: 300ms;
+    transform: translateX(-100%) scaleX(1);
+}
+@keyframes ace_progress {
+    0% { transform: translateX(-100%) scaleX(1) }
+    50% { transform: translateX(625%) scaleX(2) } 
+    100% { transform: translateX(1500%) scaleX(3) } 
+}
+@media (prefers-reduced-motion) {
+    .ace_autocomplete.ace_loading:after {
+        transform: translateX(625%) scaleX(2);
+        animation: none;
+     }
+}
+
+/*# sourceURL=ace/css/autocompletion.css */</style><style id="snippets.css">
+.ace_snippet-marker {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: rgba(194, 193, 208, 0.09);
+    border: 1px dotted rgba(211, 208, 235, 0.62);
+    position: absolute;
+}
+/*# sourceURL=ace/css/snippets.css */</style><style id="ace-xcode">/* THIS THEME WAS AUTOGENERATED BY Theme.tmpl.css (UUID: EE3AD170-2B7F-4DE1-B724-C75F13FE0085) */
+
+.ace-xcode .ace_gutter {
+  background: #e8e8e8;
+  color: #333
+}
+
+.ace-xcode .ace_print-margin {
+  width: 1px;
+  background: #e8e8e8
+}
+
+.ace-xcode {
+  background-color: #FFFFFF;
+  color: #000000
+}
+
+.ace-xcode .ace_cursor {
+  color: #000000
+}
+
+.ace-xcode .ace_marker-layer .ace_selection {
+  background: #B5D5FF
+}
+
+.ace-xcode.ace_multiselect .ace_selection.ace_start {
+  box-shadow: 0 0 3px 0px #FFFFFF;
+}
+
+.ace-xcode .ace_marker-layer .ace_step {
+  background: rgb(198, 219, 174)
+}
+
+.ace-xcode .ace_marker-layer .ace_bracket {
+  margin: -1px 0 0 -1px;
+  border: 1px solid #BFBFBF
+}
+
+.ace-xcode .ace_marker-layer .ace_active-line {
+  background: rgba(0, 0, 0, 0.071)
+}
+
+.ace-xcode .ace_gutter-active-line {
+  background-color: rgba(0, 0, 0, 0.071)
+}
+
+.ace-xcode .ace_marker-layer .ace_selected-word {
+  border: 1px solid #B5D5FF
+}
+
+.ace-xcode .ace_constant.ace_language,
+.ace-xcode .ace_keyword,
+.ace-xcode .ace_meta,
+.ace-xcode .ace_variable.ace_language {
+  color: #C800A4
+}
+
+.ace-xcode .ace_invisible {
+  color: #BFBFBF
+}
+
+.ace-xcode .ace_constant.ace_character,
+.ace-xcode .ace_constant.ace_other {
+  color: #275A5E
+}
+
+.ace-xcode .ace_constant.ace_numeric {
+  color: #3A00DC
+}
+
+.ace-xcode .ace_entity.ace_other.ace_attribute-name,
+.ace-xcode .ace_support.ace_constant,
+.ace-xcode .ace_support.ace_function {
+  color: #450084
+}
+
+.ace-xcode .ace_fold {
+  background-color: #C800A4;
+  border-color: #000000
+}
+
+.ace-xcode .ace_entity.ace_name.ace_tag,
+.ace-xcode .ace_support.ace_class,
+.ace-xcode .ace_support.ace_type {
+  color: #790EAD
+}
+
+.ace-xcode .ace_storage {
+  color: #C900A4
+}
+
+.ace-xcode .ace_string {
+  color: #DF0002
+}
+
+.ace-xcode .ace_comment {
+  color: #008E00
+}
+
+.ace-xcode .ace_indent-guide {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==) right repeat-y
+}
+
+.ace-xcode .ace_indent-guide-active {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAAZSURBVHjaYvj///9/hivKyv8BAAAA//8DACLqBhbvk+/eAAAAAElFTkSuQmCC") right repeat-y;
+} 
+
+/*# sourceURL=ace/css/ace-xcode */</style><style id="ace-dracula">/*
+ * Copyright © 2017 Zeno Rocha <hi@zenorocha.com>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+.ace-dracula .ace_gutter {
+  background: #282a36;
+  color: rgb(144,145,148)
+}
+
+.ace-dracula .ace_print-margin {
+  width: 1px;
+  background: #44475a
+}
+
+.ace-dracula {
+  background-color: #282a36;
+  color: #f8f8f2
+}
+
+.ace-dracula .ace_cursor {
+  color: #f8f8f0
+}
+
+.ace-dracula .ace_marker-layer .ace_selection {
+  background: #44475a
+}
+
+.ace-dracula.ace_multiselect .ace_selection.ace_start {
+  box-shadow: 0 0 3px 0px #282a36;
+  border-radius: 2px
+}
+
+.ace-dracula .ace_marker-layer .ace_step {
+  background: rgb(198, 219, 174)
+}
+
+.ace-dracula .ace_marker-layer .ace_bracket {
+  margin: -1px 0 0 -1px;
+  border: 1px solid #a29709
+}
+
+.ace-dracula .ace_marker-layer .ace_active-line {
+  background: #44475a
+}
+
+.ace-dracula .ace_gutter-active-line {
+  background-color: #44475a
+}
+
+.ace-dracula .ace_marker-layer .ace_selected-word {
+  box-shadow: 0px 0px 0px 1px #a29709;
+  border-radius: 3px;
+}
+
+.ace-dracula .ace_fold {
+  background-color: #50fa7b;
+  border-color: #f8f8f2
+}
+
+.ace-dracula .ace_keyword {
+  color: #ff79c6
+}
+
+.ace-dracula .ace_constant.ace_language {
+  color: #bd93f9
+}
+
+.ace-dracula .ace_constant.ace_numeric {
+  color: #bd93f9
+}
+
+.ace-dracula .ace_constant.ace_character {
+  color: #bd93f9
+}
+
+.ace-dracula .ace_constant.ace_character.ace_escape {
+  color: #ff79c6
+}
+
+.ace-dracula .ace_constant.ace_other {
+  color: #bd93f9
+}
+
+.ace-dracula .ace_support.ace_function {
+  color: #8be9fd
+}
+
+.ace-dracula .ace_support.ace_constant {
+  color: #6be5fd
+}
+
+.ace-dracula .ace_support.ace_class {
+  font-style: italic;
+  color: #66d9ef
+}
+
+.ace-dracula .ace_support.ace_type {
+  font-style: italic;
+  color: #66d9ef
+}
+
+.ace-dracula .ace_storage {
+  color: #ff79c6
+}
+
+.ace-dracula .ace_storage.ace_type {
+  font-style: italic;
+  color: #8be9fd
+}
+
+.ace-dracula .ace_invalid {
+  color: #F8F8F0;
+  background-color: #ff79c6
+}
+
+.ace-dracula .ace_invalid.ace_deprecated {
+  color: #F8F8F0;
+  background-color: #bd93f9
+}
+
+.ace-dracula .ace_string {
+  color: #f1fa8c
+}
+
+.ace-dracula .ace_comment {
+  color: #6272a4
+}
+
+.ace-dracula .ace_variable {
+  color: #50fa7b
+}
+
+.ace-dracula .ace_variable.ace_parameter {
+  font-style: italic;
+  color: #ffb86c
+}
+
+.ace-dracula .ace_entity.ace_other.ace_attribute-name {
+  color: #50fa7b
+}
+
+.ace-dracula .ace_entity.ace_name.ace_function {
+  color: #50fa7b
+}
+
+.ace-dracula .ace_entity.ace_name.ace_tag {
+  color: #ff79c6
+}
+.ace-dracula .ace_invisible {
+  color: #626680;
+}
+
+.ace-dracula .ace_indent-guide {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWNgYGBgYHB3d/8PAAOIAdULw8qMAAAAAElFTkSuQmCC) right repeat-y
+}
+
+.ace-dracula .ace_indent-guide-active {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACAQMAAACjTyRkAAAABlBMVEUAAADCwsK76u2xAAAAAXRSTlMAQObYZgAAAAxJREFUCNdjYGBoAAAAhACBGFbxzQAAAABJRU5ErkJggg==") right repeat-y;
+}
+
+/*# sourceURL=ace/css/ace-dracula */</style><style id="ace-github">/* CSS style content from github's default pygments highlighter template.
+   Cursor and selection styles from textmate.css. */
+.ace-github .ace_gutter {
+  background: #e8e8e8;
+  color: #AAA;
+}
+
+.ace-github  {
+  background: #fff;
+  color: #000;
+}
+
+.ace-github .ace_keyword {
+  font-weight: bold;
+}
+
+.ace-github .ace_string {
+  color: #D14;
+}
+
+.ace-github .ace_variable.ace_class {
+  color: teal;
+}
+
+.ace-github .ace_constant.ace_numeric {
+  color: #099;
+}
+
+.ace-github .ace_constant.ace_buildin {
+  color: #0086B3;
+}
+
+.ace-github .ace_support.ace_function {
+  color: #0086B3;
+}
+
+.ace-github .ace_comment {
+  color: #998;
+  font-style: italic;
+}
+
+.ace-github .ace_variable.ace_language  {
+  color: #0086B3;
+}
+
+.ace-github .ace_paren {
+  font-weight: bold;
+}
+
+.ace-github .ace_boolean {
+  font-weight: bold;
+}
+
+.ace-github .ace_string.ace_regexp {
+  color: #009926;
+  font-weight: normal;
+}
+
+.ace-github .ace_variable.ace_instance {
+  color: teal;
+}
+
+.ace-github .ace_constant.ace_language {
+  font-weight: bold;
+}
+
+.ace-github .ace_cursor {
+  color: black;
+}
+
+.ace-github.ace_focus .ace_marker-layer .ace_active-line {
+  background: rgb(255, 255, 204);
+}
+.ace-github .ace_marker-layer .ace_active-line {
+  background: rgb(245, 245, 245);
+}
+
+.ace-github .ace_marker-layer .ace_selection {
+  background: rgb(181, 213, 255);
+}
+
+.ace-github.ace_multiselect .ace_selection.ace_start {
+  box-shadow: 0 0 3px 0px white;
+}
+/* bold keywords cause cursor issues for some fonts */
+/* this disables bold style for editor and keeps for static highlighter */
+.ace-github.ace_nobold .ace_line > span {
+    font-weight: normal !important;
+}
+
+.ace-github .ace_marker-layer .ace_step {
+  background: rgb(252, 255, 0);
+}
+
+.ace-github .ace_marker-layer .ace_stack {
+  background: rgb(164, 229, 101);
+}
+
+.ace-github .ace_marker-layer .ace_bracket {
+  margin: -1px 0 0 -1px;
+  border: 1px solid rgb(192, 192, 192);
+}
+
+.ace-github .ace_gutter-active-line {
+    background-color : rgba(0, 0, 0, 0.07);
+}
+
+.ace-github .ace_marker-layer .ace_selected-word {
+  background: rgb(250, 250, 255);
+  border: 1px solid rgb(200, 200, 250);
+}
+
+.ace-github .ace_invisible {
+  color: #BFBFBF
+}
+
+.ace-github .ace_print-margin {
+  width: 1px;
+  background: #e8e8e8;
+}
+
+.ace-github .ace_indent-guide {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;
+}
+
+.ace-github .ace_indent-guide-active {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAAZSURBVHjaYvj///9/hivKyv8BAAAA//8DACLqBhbvk+/eAAAAAElFTkSuQmCC") right repeat-y;
+}
+
+/*# sourceURL=ace/css/ace-github */</style><style id="error_marker.css">
+    .error_widget_wrapper {
+        background: inherit;
+        color: inherit;
+        border:none
+    }
+    .error_widget {
+        border-top: solid 2px;
+        border-bottom: solid 2px;
+        margin: 5px 0;
+        padding: 10px 40px;
+        white-space: pre-wrap;
+    }
+    .error_widget.ace_error, .error_widget_arrow.ace_error{
+        border-color: #ff5a5a
+    }
+    .error_widget.ace_warning, .error_widget_arrow.ace_warning{
+        border-color: #F1D817
+    }
+    .error_widget.ace_info, .error_widget_arrow.ace_info{
+        border-color: #5a5a5a
+    }
+    .error_widget.ace_ok, .error_widget_arrow.ace_ok{
+        border-color: #5aaa5a
+    }
+    .error_widget_arrow {
+        position: absolute;
+        border: solid 5px;
+        border-top-color: transparent!important;
+        border-right-color: transparent!important;
+        border-left-color: transparent!important;
+        top: -5px;
+    }
+
+/*# sourceURL=ace/css/error_marker.css */</style><style id="ace-tm">.ace-tm .ace_gutter {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.ace-tm .ace_print-margin {
+  width: 1px;
+  background: #e8e8e8;
+}
+
+.ace-tm .ace_fold {
+    background-color: #6B72E6;
+}
+
+.ace-tm {
+  background-color: #FFFFFF;
+  color: black;
+}
+
+.ace-tm .ace_cursor {
+  color: black;
+}
+        
+.ace-tm .ace_invisible {
+  color: rgb(191, 191, 191);
+}
+
+.ace-tm .ace_storage,
+.ace-tm .ace_keyword {
+  color: blue;
+}
+
+.ace-tm .ace_constant {
+  color: rgb(197, 6, 11);
+}
+
+.ace-tm .ace_constant.ace_buildin {
+  color: rgb(88, 72, 246);
+}
+
+.ace-tm .ace_constant.ace_language {
+  color: rgb(88, 92, 246);
+}
+
+.ace-tm .ace_constant.ace_library {
+  color: rgb(6, 150, 14);
+}
+
+.ace-tm .ace_invalid {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: red;
+}
+
+.ace-tm .ace_support.ace_function {
+  color: rgb(60, 76, 114);
+}
+
+.ace-tm .ace_support.ace_constant {
+  color: rgb(6, 150, 14);
+}
+
+.ace-tm .ace_support.ace_type,
+.ace-tm .ace_support.ace_class {
+  color: rgb(109, 121, 222);
+}
+
+.ace-tm .ace_keyword.ace_operator {
+  color: rgb(104, 118, 135);
+}
+
+.ace-tm .ace_string {
+  color: rgb(3, 106, 7);
+}
+
+.ace-tm .ace_comment {
+  color: rgb(76, 136, 107);
+}
+
+.ace-tm .ace_comment.ace_doc {
+  color: rgb(0, 102, 255);
+}
+
+.ace-tm .ace_comment.ace_doc.ace_tag {
+  color: rgb(128, 159, 191);
+}
+
+.ace-tm .ace_constant.ace_numeric {
+  color: rgb(0, 0, 205);
+}
+
+.ace-tm .ace_variable {
+  color: rgb(49, 132, 149);
+}
+
+.ace-tm .ace_xml-pe {
+  color: rgb(104, 104, 91);
+}
+
+.ace-tm .ace_entity.ace_name.ace_function {
+  color: #0000A2;
+}
+
+
+.ace-tm .ace_heading {
+  color: rgb(12, 7, 255);
+}
+
+.ace-tm .ace_list {
+  color:rgb(185, 6, 144);
+}
+
+.ace-tm .ace_meta.ace_tag {
+  color:rgb(0, 22, 142);
+}
+
+.ace-tm .ace_string.ace_regex {
+  color: rgb(255, 0, 0)
+}
+
+.ace-tm .ace_marker-layer .ace_selection {
+  background: rgb(181, 213, 255);
+}
+.ace-tm.ace_multiselect .ace_selection.ace_start {
+  box-shadow: 0 0 3px 0px white;
+}
+.ace-tm .ace_marker-layer .ace_step {
+  background: rgb(252, 255, 0);
+}
+
+.ace-tm .ace_marker-layer .ace_stack {
+  background: rgb(164, 229, 101);
+}
+
+.ace-tm .ace_marker-layer .ace_bracket {
+  margin: -1px 0 0 -1px;
+  border: 1px solid rgb(192, 192, 192);
+}
+
+.ace-tm .ace_marker-layer .ace_active-line {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+.ace-tm .ace_gutter-active-line {
+    background-color : #dcdcdc;
+}
+
+.ace-tm .ace_marker-layer .ace_selected-word {
+  background: rgb(250, 250, 255);
+  border: 1px solid rgb(200, 200, 250);
+}
+
+.ace-tm .ace_indent-guide {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;
+}
+
+.ace-tm .ace_indent-guide-active {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAAZSURBVHjaYvj///9/hivKyv8BAAAA//8DACLqBhbvk+/eAAAAAElFTkSuQmCC") right repeat-y;
+}
+
+/*# sourceURL=ace/css/ace-tm */</style><style id="ace_editor.css">
+.ace_br1 {border-top-left-radius    : 3px;}
+.ace_br2 {border-top-right-radius   : 3px;}
+.ace_br3 {border-top-left-radius    : 3px; border-top-right-radius:    3px;}
+.ace_br4 {border-bottom-right-radius: 3px;}
+.ace_br5 {border-top-left-radius    : 3px; border-bottom-right-radius: 3px;}
+.ace_br6 {border-top-right-radius   : 3px; border-bottom-right-radius: 3px;}
+.ace_br7 {border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px;}
+.ace_br8 {border-bottom-left-radius : 3px;}
+.ace_br9 {border-top-left-radius    : 3px; border-bottom-left-radius:  3px;}
+.ace_br10{border-top-right-radius   : 3px; border-bottom-left-radius:  3px;}
+.ace_br11{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-left-radius:  3px;}
+.ace_br12{border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}
+.ace_br13{border-top-left-radius    : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}
+.ace_br14{border-top-right-radius   : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}
+.ace_br15{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;}
+
+
+.ace_editor {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Source Code Pro', 'source-code-pro', monospace;
+    direction: ltr;
+    text-align: left;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    forced-color-adjust: none;
+}
+
+.ace_scroller {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    background-color: inherit;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: text;
+}
+
+.ace_content {
+    position: absolute;
+    box-sizing: border-box;
+    min-width: 100%;
+    contain: style size layout;
+    font-variant-ligatures: no-common-ligatures;
+}
+.ace_invisible {
+    font-variant-ligatures: none;
+}
+
+.ace_keyboard-focus:focus {
+    box-shadow: inset 0 0 0 2px #5E9ED6;
+    outline: none;
+}
+
+.ace_dragging .ace_scroller:before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    background: rgba(250, 250, 250, 0.01);
+    z-index: 1000;
+}
+.ace_dragging.ace_dark .ace_scroller:before{
+    background: rgba(0, 0, 0, 0.01);
+}
+
+.ace_gutter {
+    position: absolute;
+    overflow : hidden;
+    width: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    cursor: default;
+    z-index: 4;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    contain: style size layout;
+}
+
+.ace_gutter-active-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.ace_scroller.ace_scroll-left:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;
+    pointer-events: none;
+}
+
+.ace_gutter-cell, .ace_gutter-cell_svg-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-left: 19px;
+    padding-right: 6px;
+    background-repeat: no-repeat;
+}
+
+.ace_gutter-cell_svg-icons .ace_gutter_annotation {
+    margin-left: -14px;
+    float: left;
+}
+
+.ace_gutter-cell .ace_gutter_annotation {
+    margin-left: -19px;
+    float: left;
+}
+
+.ace_gutter-cell.ace_error, .ace_icon.ace_error, .ace_icon.ace_error_fold, .ace_gutter-cell.ace_security, .ace_icon.ace_security, .ace_icon.ace_security_fold {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");
+    background-repeat: no-repeat;
+    background-position: 2px center;
+}
+
+.ace_gutter-cell.ace_warning, .ace_icon.ace_warning, .ace_icon.ace_warning_fold {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");
+    background-repeat: no-repeat;
+    background-position: 2px center;
+}
+
+.ace_gutter-cell.ace_info, .ace_icon.ace_info, .ace_gutter-cell.ace_hint, .ace_icon.ace_hint {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");
+    background-repeat: no-repeat;
+    background-position: 2px center;
+}
+
+.ace_dark .ace_gutter-cell.ace_info, .ace_dark .ace_icon.ace_info, .ace_dark .ace_gutter-cell.ace_hint, .ace_dark .ace_icon.ace_hint {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");
+}
+
+.ace_icon_svg.ace_error {
+    -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAxNiI+CjxnIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlPSJyZWQiIHNoYXBlLXJlbmRlcmluZz0iZ2VvbWV0cmljUHJlY2lzaW9uIj4KPGNpcmNsZSBmaWxsPSJub25lIiBjeD0iOCIgY3k9IjgiIHI9IjciIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPGxpbmUgeDE9IjExIiB5MT0iNSIgeDI9IjUiIHkyPSIxMSIvPgo8bGluZSB4MT0iMTEiIHkxPSIxMSIgeDI9IjUiIHkyPSI1Ii8+CjwvZz4KPC9zdmc+");
+    background-color: crimson;
+}
+.ace_icon_svg.ace_security {
+    -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAgMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8ZyBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZT0iZGFya29yYW5nZSIgZmlsbD0ibm9uZSIgc2hhcGUtcmVuZGVyaW5nPSJnZW9tZXRyaWNQcmVjaXNpb24iPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdHJva2UtbGluZWpvaW4tcm91bmQiIGQ9Ik04IDE0LjgzMDdDOCAxNC44MzA3IDIgMTIuOTA0NyAyIDguMDg5OTJWMy4yNjU0OEM1LjMxIDMuMjY1NDggNy45ODk5OSAxLjM0OTE4IDcuOTg5OTkgMS4zNDkxOEM3Ljk4OTk5IDEuMzQ5MTggMTAuNjkgMy4yNjU0OCAxNCAzLjI2NTQ4VjguMDg5OTJDMTQgMTIuOTA0NyA4IDE0LjgzMDcgOCAxNC44MzA3WiIvPgogICAgICAgIDxwYXRoIGQ9Ik0yIDguMDg5OTJWMy4yNjU0OEM1LjMxIDMuMjY1NDggNy45ODk5OSAxLjM0OTE4IDcuOTg5OTkgMS4zNDkxOCIvPgogICAgICAgIDxwYXRoIGQ9Ik0xMy45OSA4LjA4OTkyVjMuMjY1NDhDMTAuNjggMy4yNjU0OCA4IDEuMzQ5MTggOCAxLjM0OTE4Ii8+CiAgICAgICAgPHBhdGggY2xhc3M9InN0cm9rZS1saW5lam9pbi1yb3VuZCIgZD0iTTggNFY5Ii8+CiAgICAgICAgPHBhdGggY2xhc3M9InN0cm9rZS1saW5lam9pbi1yb3VuZCIgZD0iTTggMTBWMTIiLz4KICAgIDwvZz4KPC9zdmc+");
+    background-color: crimson;
+}
+.ace_icon_svg.ace_warning {
+    -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAxNiI+CjxnIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlPSJkYXJrb3JhbmdlIiBzaGFwZS1yZW5kZXJpbmc9Imdlb21ldHJpY1ByZWNpc2lvbiI+Cjxwb2x5Z29uIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGZpbGw9Im5vbmUiIHBvaW50cz0iOCAxIDE1IDE1IDEgMTUgOCAxIi8+CjxyZWN0IHg9IjgiIHk9IjEyIiB3aWR0aD0iMC4wMSIgaGVpZ2h0PSIwLjAxIi8+CjxsaW5lIHgxPSI4IiB5MT0iNiIgeDI9IjgiIHkyPSIxMCIvPgo8L2c+Cjwvc3ZnPg==");
+    background-color: darkorange;
+}
+.ace_icon_svg.ace_info {
+    -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAxNiI+CjxnIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlPSJibHVlIiBzaGFwZS1yZW5kZXJpbmc9Imdlb21ldHJpY1ByZWNpc2lvbiI+CjxjaXJjbGUgZmlsbD0ibm9uZSIgY3g9IjgiIGN5PSI4IiByPSI3IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjxwb2x5bGluZSBwb2ludHM9IjggMTEgOCA4Ii8+Cjxwb2x5bGluZSBwb2ludHM9IjkgOCA2IDgiLz4KPGxpbmUgeDE9IjEwIiB5MT0iMTEiIHgyPSI2IiB5Mj0iMTEiLz4KPHJlY3QgeD0iOCIgeT0iNSIgd2lkdGg9IjAuMDEiIGhlaWdodD0iMC4wMSIvPgo8L2c+Cjwvc3ZnPg==");
+    background-color: royalblue;
+}
+.ace_icon_svg.ace_hint {
+    -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAgMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8ZyBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZT0ic2lsdmVyIiBmaWxsPSJub25lIiBzaGFwZS1yZW5kZXJpbmc9Imdlb21ldHJpY1ByZWNpc2lvbiI+CiAgICAgICAgPHBhdGggY2xhc3M9InN0cm9rZS1saW5lam9pbi1yb3VuZCIgZD0iTTYgMTRIMTAiLz4KICAgICAgICA8cGF0aCBkPSJNOCAxMUg5QzkgOS40NzAwMiAxMiA4LjU0MDAyIDEyIDUuNzYwMDJDMTIuMDIgNC40MDAwMiAxMS4zOSAzLjM2MDAyIDEwLjQzIDIuNjcwMDJDOSAxLjY0MDAyIDcuMDAwMDEgMS42NDAwMiA1LjU3MDAxIDIuNjcwMDJDNC42MTAwMSAzLjM2MDAyIDMuOTggNC40MDAwMiA0IDUuNzYwMDJDNCA4LjU0MDAyIDcuMDAwMDEgOS40NzAwMiA3LjAwMDAxIDExSDhaIi8+CiAgICA8L2c+Cjwvc3ZnPg==");
+    background-color: silver;
+}
+
+.ace_icon_svg.ace_error_fold {
+    -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAxNiIgZmlsbD0ibm9uZSI+CiAgPHBhdGggZD0ibSAxOC45Mjk4NTEsNy44Mjk4MDc2IGMgMC4xNDYzNTMsNi4zMzc0NjA0IC02LjMyMzE0Nyw3Ljc3Nzg0NDQgLTcuNDc3OTEyLDcuNzc3ODQ0NCAtMi4xMDcyNzI2LC0wLjEyODc1IDUuMTE3Njc4LDAuMzU2MjQ5IDUuMDUxNjk4LC03Ljg3MDA2MTggLTAuNjA0NjcyLC04LjAwMzk3MzQ5IC03LjA3NzI3MDYsLTcuNTYzMTE4OSAtNC44NTczLC03LjQzMDM5NTU2IDEuNjA2LC0wLjExNTE0MjI1IDYuODk3NDg1LDEuMjYyNTQ1OTYgNy4yODM1MTQsNy41MjI2MTI5NiB6IiBmaWxsPSJjcmltc29uIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0ibSA4LjExNDc1NjIsMi4wNTI5ODI4IGMgMy4zNDkxNjk4LDAgNi4wNjQxMzI4LDIuNjc2ODYyNyA2LjA2NDEzMjgsNS45Nzg5NTMgMCwzLjMwMjExMjIgLTIuNzE0OTYzLDUuOTc4OTIwMiAtNi4wNjQxMzI4LDUuOTc4OTIwMiAtMy4zNDkxNDczLDAgLTYuMDY0MTc3MiwtMi42NzY4MDggLTYuMDY0MTc3MiwtNS45Nzg5MjAyIDAuMDA1MzksLTMuMjk5ODg2MSAyLjcxNzI2NTYsLTUuOTczNjQwOCA2LjA2NDE3NzIsLTUuOTc4OTUzIHogbSAwLC0xLjczNTgyNzE5IGMgLTQuMzIxNDgzNiwwIC03LjgyNDc0MDM4LDMuNDU0MDE4NDkgLTcuODI0NzQwMzgsNy43MTQ3ODAxOSAwLDQuMjYwNzI4MiAzLjUwMzI1Njc4LDcuNzE0NzQ1MiA3LjgyNDc0MDM4LDcuNzE0NzQ1MiA0LjMyMTQ0OTgsMCA3LjgyNDY5OTgsLTMuNDU0MDE3IDcuODI0Njk5OCwtNy43MTQ3NDUyIDAsLTIuMDQ2MDkxNCAtMC44MjQzOTIsLTQuMDA4MzY3MiAtMi4yOTE3NTYsLTUuNDU1MTc0NiBDIDEyLjE4MDIyNSwxLjEyOTk2NDggMTAuMTkwMDEzLDAuMzE3MTU1NjEgOC4xMTQ3NTYyLDAuMzE3MTU1NjEgWiBNIDYuOTM3NDU2Myw4LjI0MDU5ODUgNC42NzE4Njg1LDEwLjQ4NTg1MiA2LjAwODY4MTQsMTEuODc2NzI4IDguMzE3MDAzNSw5LjYwMDc5MTEgMTAuNjI1MzM3LDExLjg3NjcyOCAxMS45NjIxMzgsMTAuNDg1ODUyIDkuNjk2NTUwOCw4LjI0MDU5ODUgMTEuOTYyMTM4LDYuMDA2ODA2NiAxMC41NzMyNDYsNC42Mzc0MzM1IDguMzE3MDAzNSw2Ljg3MzQyOTcgNi4wNjA3NjA3LDQuNjM3NDMzNSA0LjY3MTg2ODUsNi4wMDY4MDY2IFoiIGZpbGw9ImNyaW1zb24iIHN0cm9rZS13aWR0aD0iMiIvPgo8L3N2Zz4=");
+    background-color: crimson;
+}
+.ace_icon_svg.ace_security_fold {
+    -webkit-mask-image: url("data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTcgMTQiIGZpbGw9Im5vbmUiPgogICAgPHBhdGggZD0iTTEwLjAwMDEgMTMuNjk5MkMxMC4wMDAxIDEzLjY5OTIgMTEuOTI0MSAxMy40NzYzIDEzIDEyLjY5OTJDMTQuNDEzOSAxMS42NzgxIDE2IDEwLjUgMTYuMTI1MSA2LjgxMTI2VjIuNTg5ODdDMTYuMTI1MSAyLjU0NzY4IDE2LjEyMjEgMi41MDYxOSAxNi4xMTY0IDIuNDY1NTlWMS43MTQ4NUgxNS4yNDE0TDE1LjIzMDcgMS43MTQ4NEwxNC42MjUxIDEuNjk5MjJWNi44MTEyM0MxNC42MjUxIDguNTEwNjEgMTQuNjI1MSA5LjQ2NDYxIDEyLjc4MjQgMTEuNzIxQzEyLjE1ODYgMTIuNDg0OCAxMC4wMDAxIDEzLjY5OTIgMTAuMDAwMSAxMy42OTkyWiIgZmlsbD0iY3JpbXNvbiIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTcuMzM2MDkgMC4zNjc0NzVDNy4wMzIxNCAwLjE1MjY1MiA2LjYyNTQ4IDAuMTUzNjE0IDYuMzIyNTMgMC4zNjk5OTdMNi4zMDg2OSAwLjM3OTU1NEM2LjI5NTUzIDAuMzg4NTg4IDYuMjczODggMC40MDMyNjYgNi4yNDQxNyAwLjQyMjc4OUM2LjE4NDcxIDAuNDYxODYgNi4wOTMyMSAwLjUyMDE3MSA1Ljk3MzEzIDAuNTkxMzczQzUuNzMyNTEgMC43MzQwNTkgNS4zNzk5IDAuOTI2ODY0IDQuOTQyNzkgMS4xMjAwOUM0LjA2MTQ0IDEuNTA5NyAyLjg3NTQxIDEuODgzNzcgMS41ODk4NCAxLjg4Mzc3SDAuNzE0ODQ0VjIuNzU4NzdWNi45ODAxNUMwLjcxNDg0NCA5LjQ5Mzc0IDIuMjg4NjYgMTEuMTk3MyAzLjcwMjU0IDEyLjIxODVDNC40MTg0NSAxMi43MzU1IDUuMTI4NzQgMTMuMTA1MyA1LjY1NzMzIDEzLjM0NTdDNS45MjI4NCAxMy40NjY0IDYuMTQ1NjYgMTMuNTU1OSA2LjMwNDY1IDEzLjYxNjFDNi4zODQyMyAxMy42NDYyIDYuNDQ4MDUgMTMuNjY5IDYuNDkzNDkgMTMuNjg0OEM2LjUxNjIyIDEzLjY5MjcgNi41MzQzOCAxMy42OTg5IDYuNTQ3NjQgMTMuNzAzM0w2LjU2MzgyIDEzLjcwODdMNi41NjkwOCAxMy43MTA0TDYuNTcwOTkgMTMuNzExTDYuODM5ODQgMTMuNzUzM0w2LjU3MjQyIDEzLjcxMTVDNi43NDYzMyAxMy43NjczIDYuOTMzMzUgMTMuNzY3MyA3LjEwNzI3IDEzLjcxMTVMNy4xMDg3IDEzLjcxMUw3LjExMDYxIDEzLjcxMDRMNy4xMTU4NyAxMy43MDg3TDcuMTMyMDUgMTMuNzAzM0M3LjE0NTMxIDEzLjY5ODkgNy4xNjM0NiAxMy42OTI3IDcuMTg2MTkgMTMuNjg0OEM3LjIzMTY0IDEzLjY2OSA3LjI5NTQ2IDEzLjY0NjIgNy4zNzUwMyAxMy42MTYxQzcuNTM0MDMgMTMuNTU1OSA3Ljc1Njg1IDEzLjQ2NjQgOC4wMjIzNiAxMy4zNDU3QzguNTUwOTUgMTMuMTA1MyA5LjI2MTIzIDEyLjczNTUgOS45NzcxNSAxMi4yMTg1QzExLjM5MSAxMS4xOTczIDEyLjk2NDggOS40OTM3NyAxMi45NjQ4IDYuOTgwMThWMi43NTg4QzEyLjk2NDggMi43MTY2IDEyLjk2MTkgMi42NzUxMSAxMi45NTYxIDIuNjM0NTFWMS44ODM3N0gxMi4wODExQzEyLjA3NzUgMS44ODM3NyAxMi4wNzQgMS44ODM3NyAxMi4wNzA0IDEuODgzNzdDMTAuNzk3OSAxLjg4MDA0IDkuNjE5NjIgMS41MTEwMiA4LjczODk0IDEuMTI0ODZDOC43MzUzNCAxLjEyMzI3IDguNzMxNzQgMS4xMjE2OCA4LjcyODE0IDEuMTIwMDlDOC4yOTEwMyAwLjkyNjg2NCA3LjkzODQyIDAuNzM0MDU5IDcuNjk3NzkgMC41OTEzNzNDNy41Nzc3MiAwLjUyMDE3MSA3LjQ4NjIyIDAuNDYxODYgNy40MjY3NiAwLjQyMjc4OUM3LjM5NzA1IDAuNDAzMjY2IDcuMzc1MzkgMC4zODg1ODggNy4zNjIyNCAwLjM3OTU1NEw3LjM0ODk2IDAuMzcwMzVDNy4zNDg5NiAwLjM3MDM1IDcuMzQ4NDcgMC4zNzAwMiA3LjM0NTYzIDAuMzc0MDU0TDcuMzM3NzkgMC4zNjg2NTlMNy4zMzYwOSAwLjM2NzQ3NVpNOC4wMzQ3MSAyLjcyNjkxQzguODYwNCAzLjA5MDYzIDkuOTYwNjYgMy40NjMwOSAxMS4yMDYxIDMuNTg5MDdWNi45ODAxNUgxMS4yMTQ4QzExLjIxNDggOC42Nzk1MyAxMC4xNjM3IDkuOTI1MDcgOC45NTI1NCAxMC43OTk4QzguMzU1OTUgMTEuMjMwNiA3Ljc1Mzc0IDExLjU0NTQgNy4yOTc5NiAxMS43NTI3QzcuMTE2NzEgMTEuODM1MSA2Ljk2MDYyIDExLjg5OTYgNi44Mzk4NCAxMS45NDY5QzYuNzE5MDYgMTEuODk5NiA2LjU2Mjk3IDExLjgzNTEgNi4zODE3MyAxMS43NTI3QzUuOTI1OTUgMTEuNTQ1NCA1LjMyMzczIDExLjIzMDYgNC43MjcxNSAxMC43OTk4QzMuNTE2MDMgOS45MjUwNyAyLjQ2NDg0IDguNjc5NTUgMi40NjQ4NCA2Ljk4MDE4VjMuNTg5MDlDMy43MTczOCAzLjQ2MjM5IDQuODIzMDggMy4wODYzOSA1LjY1MDMzIDIuNzIwNzFDNi4xNDIyOCAyLjUwMzI0IDYuNTQ0ODUgMi4yODUzNyA2LjgzMjU0IDIuMTE2MjRDNy4xMjE4MSAyLjI4NTM1IDcuNTI3IDIuNTAzNTIgOC4wMjE5NiAyLjcyMTMxQzguMDI2MiAyLjcyMzE3IDguMDMwNDUgMi43MjUwNCA4LjAzNDcxIDIuNzI2OTFaTTUuOTY0ODQgMy40MDE0N1Y3Ljc3NjQ3SDcuNzE0ODRWMy40MDE0N0g1Ljk2NDg0Wk01Ljk2NDg0IDEwLjQwMTVWOC42NTE0N0g3LjcxNDg0VjEwLjQwMTVINS45NjQ4NFoiIGZpbGw9ImNyaW1zb24iIHN0cm9rZS13aWR0aD0iMiIvPgo8L3N2Zz4=");
+    background-color: crimson;
+}
+.ace_icon_svg.ace_warning_fold {
+    -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyMCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNC43NzY5IDE0LjczMzdMOC42NTE5MiAyLjQ4MzY5QzguMzI5NDYgMS44Mzg3NyA3LjQwOTEzIDEuODM4NzcgNy4wODY2NyAyLjQ4MzY5TDAuOTYxNjY5IDE0LjczMzdDMC42NzA3NzUgMTUuMzE1NSAxLjA5MzgzIDE2IDEuNzQ0MjkgMTZIMTMuOTk0M0MxNC42NDQ4IDE2IDE1LjA2NzggMTUuMzE1NSAxNC43NzY5IDE0LjczMzdaTTMuMTYwMDcgMTQuMjVMNy44NjkyOSA0LjgzMTU2TDEyLjU3ODUgMTQuMjVIMy4xNjAwN1pNOC43NDQyOSAxMS42MjVWMTMuMzc1SDYuOTk0MjlWMTEuNjI1SDguNzQ0MjlaTTYuOTk0MjkgMTAuNzVWNy4yNUg4Ljc0NDI5VjEwLjc1SDYuOTk0MjlaIiBmaWxsPSIjRUM3MjExIi8+CjxwYXRoIGQ9Ik0xMS4xOTkxIDIuOTUyMzhDMTAuODgwOSAyLjMxNDY3IDEwLjM1MzcgMS44MDUyNiA5LjcwNTUgMS41MDlMMTEuMDQxIDEuMDY5NzhDMTEuNjg4MyAwLjk0OTgxNCAxMi4zMzcgMS4yNzI2MyAxMi42MzE3IDEuODYxNDFMMTcuNjEzNiAxMS44MTYxQzE4LjM1MjcgMTMuMjkyOSAxNy41OTM4IDE1LjA4MDQgMTYuMDE4IDE1LjU3NDVDMTYuNDA0NCAxNC40NTA3IDE2LjMyMzEgMTMuMjE4OCAxNS43OTI0IDEyLjE1NTVMMTEuMTk5MSAyLjk1MjM4WiIgZmlsbD0iI0VDNzIxMSIvPgo8L3N2Zz4=");
+    background-color: darkorange;
+}
+
+.ace_scrollbar {
+    contain: strict;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 6;
+}
+
+.ace_scrollbar-inner {
+    position: absolute;
+    cursor: text;
+    left: 0;
+    top: 0;
+}
+
+.ace_scrollbar-v{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    top: 0;
+}
+
+.ace_scrollbar-h {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    left: 0;
+}
+
+.ace_print-margin {
+    position: absolute;
+    height: 100%;
+}
+
+.ace_text-input {
+    position: absolute;
+    z-index: 0;
+    width: 0.5em;
+    height: 1em;
+    opacity: 0;
+    background: transparent;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    resize: none;
+    outline: none;
+    overflow: hidden;
+    font: inherit;
+    padding: 0 1px;
+    margin: 0 -1px;
+    contain: strict;
+    -ms-user-select: text;
+    -moz-user-select: text;
+    -webkit-user-select: text;
+    user-select: text;
+    /*with `pre-line` chrome inserts &nbsp; instead of space*/
+    white-space: pre!important;
+}
+.ace_text-input.ace_composition {
+    background: transparent;
+    color: inherit;
+    z-index: 1000;
+    opacity: 1;
+}
+.ace_composition_placeholder { color: transparent }
+.ace_composition_marker { 
+    border-bottom: 1px solid;
+    position: absolute;
+    border-radius: 0;
+    margin-top: 1px;
+}
+
+[ace_nocontext=true] {
+    transform: none!important;
+    filter: none!important;
+    clip-path: none!important;
+    mask : none!important;
+    contain: none!important;
+    perspective: none!important;
+    mix-blend-mode: initial!important;
+    z-index: auto;
+}
+
+.ace_layer {
+    z-index: 1;
+    position: absolute;
+    overflow: hidden;
+    /* workaround for chrome bug https://github.com/ajaxorg/ace/issues/2312*/
+    word-wrap: normal;
+    white-space: pre;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    /* setting pointer-events: auto; on node under the mouse, which changes
+        during scroll, will break mouse wheel scrolling in Safari */
+    pointer-events: none;
+}
+
+.ace_gutter-layer {
+    position: relative;
+    width: auto;
+    text-align: right;
+    pointer-events: auto;
+    height: 1000000px;
+    contain: style size layout;
+}
+
+.ace_text-layer {
+    font: inherit !important;
+    position: absolute;
+    height: 1000000px;
+    width: 1000000px;
+    contain: style size layout;
+}
+
+.ace_text-layer > .ace_line, .ace_text-layer > .ace_line_group {
+    contain: style size layout;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.ace_hidpi .ace_text-layer,
+.ace_hidpi .ace_gutter-layer,
+.ace_hidpi .ace_content,
+.ace_hidpi .ace_gutter {
+    contain: strict;
+}
+.ace_hidpi .ace_text-layer > .ace_line, 
+.ace_hidpi .ace_text-layer > .ace_line_group {
+    contain: strict;
+}
+
+.ace_cjk {
+    display: inline-block;
+    text-align: center;
+}
+
+.ace_cursor-layer {
+    z-index: 4;
+}
+
+.ace_cursor {
+    z-index: 4;
+    position: absolute;
+    box-sizing: border-box;
+    border-left: 2px solid;
+    /* workaround for smooth cursor repaintng whole screen in chrome */
+    transform: translatez(0);
+}
+
+.ace_multiselect .ace_cursor {
+    border-left-width: 1px;
+}
+
+.ace_slim-cursors .ace_cursor {
+    border-left-width: 1px;
+}
+
+.ace_overwrite-cursors .ace_cursor {
+    border-left-width: 0;
+    border-bottom: 1px solid;
+}
+
+.ace_hidden-cursors .ace_cursor {
+    opacity: 0.2;
+}
+
+.ace_hasPlaceholder .ace_hidden-cursors .ace_cursor {
+    opacity: 0;
+}
+
+.ace_smooth-blinking .ace_cursor {
+    transition: opacity 0.18s;
+}
+
+.ace_animate-blinking .ace_cursor {
+    animation-duration: 1000ms;
+    animation-timing-function: step-end;
+    animation-name: blink-ace-animate;
+    animation-iteration-count: infinite;
+}
+
+.ace_animate-blinking.ace_smooth-blinking .ace_cursor {
+    animation-duration: 1000ms;
+    animation-timing-function: ease-in-out;
+    animation-name: blink-ace-animate-smooth;
+}
+    
+@keyframes blink-ace-animate {
+    from, to { opacity: 1; }
+    60% { opacity: 0; }
+}
+
+@keyframes blink-ace-animate-smooth {
+    from, to { opacity: 1; }
+    45% { opacity: 1; }
+    60% { opacity: 0; }
+    85% { opacity: 0; }
+}
+
+.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {
+    position: absolute;
+    z-index: 3;
+}
+
+.ace_marker-layer .ace_selection {
+    position: absolute;
+    z-index: 5;
+}
+
+.ace_marker-layer .ace_bracket {
+    position: absolute;
+    z-index: 6;
+}
+
+.ace_marker-layer .ace_error_bracket {
+    position: absolute;
+    border-bottom: 1px solid #DE5555;
+    border-radius: 0;
+}
+
+.ace_marker-layer .ace_active-line {
+    position: absolute;
+    z-index: 2;
+}
+
+.ace_marker-layer .ace_selected-word {
+    position: absolute;
+    z-index: 4;
+    box-sizing: border-box;
+}
+
+.ace_line .ace_fold {
+    box-sizing: border-box;
+
+    display: inline-block;
+    height: 11px;
+    margin-top: -2px;
+    vertical-align: middle;
+
+    background-image:
+        url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),
+        url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");
+    background-repeat: no-repeat, repeat-x;
+    background-position: center center, top left;
+    color: transparent;
+
+    border: 1px solid black;
+    border-radius: 2px;
+
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.ace_dark .ace_fold {
+}
+
+.ace_fold:hover{
+    background-image:
+        url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),
+        url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");
+}
+
+.ace_tooltip {
+    background-color: #f5f5f5;
+    border: 1px solid gray;
+    border-radius: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    color: black;
+    padding: 3px 4px;
+    position: fixed;
+    z-index: 999999;
+    box-sizing: border-box;
+    cursor: default;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: normal;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    pointer-events: none;
+    overflow: auto;
+    max-width: min(33em, 66vw);
+    overscroll-behavior: contain;
+}
+.ace_tooltip pre {
+    white-space: pre-wrap;
+}
+
+.ace_tooltip.ace_dark {
+    background-color: #636363;
+    color: #fff;
+}
+
+.ace_tooltip:focus {
+    outline: 1px solid #5E9ED6;
+}
+
+.ace_icon {
+    display: inline-block;
+    width: 18px;
+    vertical-align: top;
+}
+
+.ace_icon_svg {
+    display: inline-block;
+    width: 12px;
+    vertical-align: top;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 12px;
+    -webkit-mask-position: center;
+}
+
+.ace_folding-enabled > .ace_gutter-cell, .ace_folding-enabled > .ace_gutter-cell_svg-icons {
+    padding-right: 13px;
+}
+
+.ace_fold-widget, .ace_custom-widget {
+    box-sizing: border-box;
+
+    margin: 0 -12px 0 1px;
+    display: none;
+    width: 11px;
+    vertical-align: top;
+
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border-radius: 3px;
+    
+    border: 1px solid transparent;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.ace_custom-widget {
+    background: none;
+}
+
+.ace_folding-enabled .ace_fold-widget {
+    display: inline-block;   
+}
+
+.ace_fold-widget.ace_end {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");
+}
+
+.ace_fold-widget.ace_closed {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");
+}
+
+.ace_fold-widget:hover {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
+}
+
+.ace_fold-widget:active {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+/**
+ * Dark version for fold widgets
+ */
+.ace_dark .ace_fold-widget {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");
+}
+.ace_dark .ace_fold-widget.ace_end {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");
+}
+.ace_dark .ace_fold-widget.ace_closed {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");
+}
+.ace_dark .ace_fold-widget:hover {
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.ace_dark .ace_fold-widget:active {
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.ace_inline_button {
+    border: 1px solid lightgray;
+    display: inline-block;
+    margin: -1px 8px;
+    padding: 0 5px;
+    pointer-events: auto;
+    cursor: pointer;
+}
+.ace_inline_button:hover {
+    border-color: gray;
+    background: rgba(200,200,200,0.2);
+    display: inline-block;
+    pointer-events: auto;
+}
+
+.ace_fold-widget.ace_invalid {
+    background-color: #FFB4B4;
+    border-color: #DE5555;
+}
+
+.ace_fade-fold-widgets .ace_fold-widget {
+    transition: opacity 0.4s ease 0.05s;
+    opacity: 0;
+}
+
+.ace_fade-fold-widgets:hover .ace_fold-widget {
+    transition: opacity 0.05s ease 0.05s;
+    opacity:1;
+}
+
+.ace_underline {
+    text-decoration: underline;
+}
+
+.ace_bold {
+    font-weight: bold;
+}
+
+.ace_nobold .ace_bold {
+    font-weight: normal;
+}
+
+.ace_italic {
+    font-style: italic;
+}
+
+
+.ace_error-marker {
+    background-color: rgba(255, 0, 0,0.2);
+    position: absolute;
+    z-index: 9;
+}
+
+.ace_highlight-marker {
+    background-color: rgba(255, 255, 0,0.2);
+    position: absolute;
+    z-index: 8;
+}
+
+.ace_mobile-menu {
+    position: absolute;
+    line-height: 1.5;
+    border-radius: 4px;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    background: white;
+    box-shadow: 1px 3px 2px grey;
+    border: 1px solid #dcdcdc;
+    color: black;
+}
+.ace_dark > .ace_mobile-menu {
+    background: #333;
+    color: #ccc;
+    box-shadow: 1px 3px 2px grey;
+    border: 1px solid #444;
+
+}
+.ace_mobile-button {
+    padding: 2px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.ace_mobile-button:hover {
+    background-color: #eee;
+    opacity:1;
+}
+.ace_mobile-button:active {
+    background-color: #ddd;
+}
+
+.ace_placeholder {
+    position: relative;
+    font-family: arial;
+    transform: scale(0.9);
+    transform-origin: left;
+    white-space: pre;
+    opacity: 0.7;
+    margin: 0 10px;
+    z-index: 1;
+}
+
+.ace_ghost_text {
+    opacity: 0.5;
+    font-style: italic;
+}
+
+.ace_ghost_text_container > div {
+    white-space: pre;
+}
+
+.ghost_text_line_wrapped::after {
+    content: "↩";
+    position: absolute;
+}
+
+.ace_lineWidgetContainer.ace_ghost_text {
+    margin: 0px 4px
+}
+
+.ace_screenreader-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+.ace_hidden_token {
+    display: none;
+}
+/*# sourceURL=ace/css/ace_editor.css */</style><style id="ace_scrollbar.css">.ace_editor>.ace_sb-v div, .ace_editor>.ace_sb-h div{
+  position: absolute;
+  background: rgba(128, 128, 128, 0.6);
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #bbb;
+  border-radius: 2px;
+  z-index: 8;
+}
+.ace_editor>.ace_sb-v, .ace_editor>.ace_sb-h {
+  position: absolute;
+  z-index: 6;
+  background: none;
+  overflow: hidden!important;
+}
+.ace_editor>.ace_sb-v {
+  z-index: 6;
+  right: 0;
+  top: 0;
+  width: 12px;
+}
+.ace_editor>.ace_sb-v div {
+  z-index: 8;
+  right: 0;
+  width: 100%;
+}
+.ace_editor>.ace_sb-h {
+  bottom: 0;
+  left: 0;
+  height: 12px;
+}
+.ace_editor>.ace_sb-h div {
+  bottom: 0;
+  height: 100%;
+}
+.ace_editor>.ace_sb_grabbed {
+  z-index: 8;
+  background: #000;
+}
+/*# sourceURL=ace/css/ace_scrollbar.css */</style><link rel="stylesheet" href="./jasonnnnnnn_files/18771aaca4a75184.css" data-precedence="next"><link rel="stylesheet" href="./jasonnnnnnn_files/f3bd22f6b7bf1e27.css" data-precedence="next"><link rel="preload" as="script" fetchpriority="low" href="./jasonnnnnnn_files/webpack-bde296e76d3969e5.js.download"><script type="text/javascript" async="" src="./jasonnnnnnn_files/analytics.js.download"></script><script type="text/javascript" async="" src="./jasonnnnnnn_files/js"></script><script src="./jasonnnnnnn_files/4bd1b696-100b9d70ed4e49c1.js.download" async=""></script><script src="./jasonnnnnnn_files/1255-8befde0980f5cba9.js.download" async=""></script><script src="./jasonnnnnnn_files/main-app-b597bd25af1d763b.js.download" async=""></script><script src="./jasonnnnnnn_files/1213-28bbfada765fedce.js.download" async=""></script><script src="./jasonnnnnnn_files/4517-f10f0e681b821c53.js.download" async=""></script><script src="./jasonnnnnnn_files/6803-8fad9bb8baacc42e.js.download" async=""></script><script src="./jasonnnnnnn_files/4468-c3c2aac732637727.js.download" async=""></script><script src="./jasonnnnnnn_files/layout-954dc5a1f356f82b.js.download" async=""></script><script src="./jasonnnnnnn_files/2619-04bc32f026a0d946.js.download" async=""></script><script src="./jasonnnnnnn_files/8605-fd15ebc4b3901fb7.js.download" async=""></script><script src="./jasonnnnnnn_files/page-6a1ae2e6205a4c62.js.download" async=""></script><script async="" src="./jasonnnnnnn_files/highlight.min.js.download"></script><script>
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  if (!theme) {
+                    var ocSettings = localStorage.getItem('oc:settings');
+                    if (ocSettings) {
+                      var parsed = JSON.parse(ocSettings);
+                      if (parsed.theme) {
+                        localStorage.setItem('theme', parsed.theme);
+                      }
+                    }
+                  }
+                } catch (e) {}
+              })();
+            </script><link rel="stylesheet" href="./jasonnnnnnn_files/github.min.css"><script src="./jasonnnnnnn_files/polyfills-42372ed130431b0a.js.download" nomodule=""></script><style id="_goober"> @keyframes go2264125279{from{transform:scale(0) rotate(45deg);opacity:0;}to{transform:scale(1) rotate(45deg);opacity:1;}}@keyframes go3020080000{from{transform:scale(0);opacity:0;}to{transform:scale(1);opacity:1;}}@keyframes go463499852{from{transform:scale(0) rotate(90deg);opacity:0;}to{transform:scale(1) rotate(90deg);opacity:1;}}@keyframes go1268368563{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}@keyframes go1310225428{from{transform:scale(0) rotate(45deg);opacity:0;}to{transform:scale(1) rotate(45deg);opacity:1;}}@keyframes go651618207{0%{height:0;width:0;opacity:0;}40%{height:0;width:6px;opacity:1;}100%{opacity:1;height:10px;}}@keyframes go901347462{from{transform:scale(0.6);opacity:0.4;}to{transform:scale(1);opacity:1;}}.go4109123758{z-index:9999;}.go4109123758 > *{pointer-events:auto;}</style><script async="" src="./jasonnnnnnn_files/client"></script><style id="googleidentityservice_button_styles">.qJTHM{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;color:#202124;direction:ltr;-webkit-touch-callout:none;font-family:Roboto-Regular,arial,sans-serif;-webkit-font-smoothing:antialiased;font-weight:400;margin:0;overflow:hidden;-webkit-text-size-adjust:100%}.ynRLnc{left:-9999px;position:absolute;top:-9999px}.L6cTce{display:none}.bltWBb{overflow-wrap:break-word;word-break:break-word}.hSRGPd{color:#1a73e8;cursor:pointer;font-weight:500;text-decoration:none}.Bz112c-W3lGp{height:16px;width:16px}.Bz112c-E3DyYd{height:20px;width:20px}.Bz112c-r9oPif{height:24px;width:24px}.Bz112c-u2z5K{height:36px;width:36px}.Bz112c-uaxL4e{border-radius:10px}.LgbsSe-Bz112c{display:block}.S9gUrf-YoZ4jf{border:none;margin:0;padding:0}.S9gUrf-YoZ4jf *{border:none;margin:0;padding:0}.fFW7wc-ibnC6b>.aZ2wEe>div{border-color:#4285f4}.P1ekSe-ZMv3u{-webkit-transition:height .2s linear;transition:height .2s linear}.P1ekSe-ZMv3u>div:first-child{background-color:#1a73e8!important;-webkit-transition:width .3s linear;transition:width .3s linear}.P1ekSe-ZMv3u>div:nth-child(2){background-image:-webkit-gradient(linear,left top,right top,from(rgba(255,255,255,.7)),to(rgba(255,255,255,.7))),-webkit-gradient(linear,left top,right top,from(#1a73e8),to(#1a73e8))!important;background-image:-webkit-linear-gradient(left,rgba(255,255,255,.7),rgba(255,255,255,.7)),-webkit-linear-gradient(left,#1a73e8,#1a73e8)!important;background-image:linear-gradient(90deg,rgba(255,255,255,.7),rgba(255,255,255,.7)),linear-gradient(90deg,#1a73e8,#1a73e8)!important}.P1ekSe-ZMv3u>div:nth-child(3){background-image:-webkit-gradient(linear,left top,right top,from(rgba(255,255,255,.7)),to(rgba(255,255,255,.7))),-webkit-gradient(linear,left top,right top,from(#1a73e8),to(#1a73e8))!important;background-image:-webkit-linear-gradient(left,rgba(255,255,255,.7),rgba(255,255,255,.7)),-webkit-linear-gradient(left,#1a73e8,#1a73e8)!important;background-image:linear-gradient(90deg,rgba(255,255,255,.7),rgba(255,255,255,.7)),linear-gradient(90deg,#1a73e8,#1a73e8)!important}.haAclf{display:inline-block}.nsm7Bb-HzV7m-LgbsSe{border-radius:4px;box-sizing:border-box;-webkit-transition:background-color .218s,border-color .218s;transition:background-color .218s,border-color .218s;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;-webkit-appearance:none;background-color:#fff;background-image:none;border:1px solid #dadce0;color:#3c4043;cursor:pointer;font-family:Google Sans,arial,sans-serif;font-size:14px;height:40px;letter-spacing:.25px;outline:none;overflow:hidden;padding:0 12px;position:relative;text-align:center;vertical-align:middle;white-space:nowrap;width:auto}@media screen and (-ms-high-contrast:active){.nsm7Bb-HzV7m-LgbsSe{border:2px solid windowText;color:windowText}}@media screen and (preferes-contrast:more){.nsm7Bb-HzV7m-LgbsSe{color:#000}}.nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe{font-size:14px;height:32px;letter-spacing:.25px;padding:0 10px}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe{font-size:11px;height:20px;letter-spacing:.3px;padding:0 8px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe{padding:0;width:40px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.pSzOP-SxQuSe{width:32px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.purZT-SxQuSe{width:20px}.nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK{border-radius:20px}.nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK.pSzOP-SxQuSe{border-radius:16px}.nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK.purZT-SxQuSe{border-radius:10px}.nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc{border:none;color:#fff}.nsm7Bb-HzV7m-LgbsSe.MFS4be-v3pZbf-Ia7Qfc{background-color:#1a73e8}.nsm7Bb-HzV7m-LgbsSe.MFS4be-JaPV2b-Ia7Qfc{background-color:#202124;color:#e8eaed}@media screen and (prefers-contrast:more){.nsm7Bb-HzV7m-LgbsSe.MFS4be-JaPV2b-Ia7Qfc{color:#fff}}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{height:18px;margin-right:8px;min-width:18px;width:18px}.nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{height:14px;min-width:14px;width:14px}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{height:10px;min-width:10px;width:10px}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-Bz112c{margin-left:8px;margin-right:-4px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{margin:0;padding:10px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{padding:8px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{padding:4px}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-top-left-radius:3px;border-bottom-left-radius:3px;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;align-items:center;background-color:#fff;height:36px;margin-left:-10px;margin-right:12px;min-width:36px;width:36px}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf .nsm7Bb-HzV7m-LgbsSe-Bz112c,.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf .nsm7Bb-HzV7m-LgbsSe-Bz112c{margin:0;padding:0}.nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{height:28px;margin-left:-8px;margin-right:10px;min-width:28px;width:28px}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{height:16px;margin-left:-6px;margin-right:8px;min-width:16px;width:16px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-radius:3px;margin-left:2px;margin-right:0;padding:0}.nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-radius:18px}.nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-radius:14px}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-radius:8px}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-align-items:center;-webkit-box-align:center;align-items:center;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;-webkit-flex-wrap:nowrap;flex-wrap:nowrap;height:100%;position:relative;width:100%}.nsm7Bb-HzV7m-LgbsSe .oXtfBe-l4eHX{-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-BPrWId{-webkit-flex-grow:1;-webkit-box-flex:1;flex-grow:1;font-family:Google Sans,arial,sans-serif;font-weight:500;overflow:hidden;text-overflow:ellipsis;vertical-align:top}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-BPrWId{font-weight:300}.nsm7Bb-HzV7m-LgbsSe .oXtfBe-l4eHX .nsm7Bb-HzV7m-LgbsSe-BPrWId{-webkit-flex-grow:0;-webkit-box-flex:0;flex-grow:0}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-MJoBVe{-webkit-transition:background-color .218s;transition:background-color .218s;bottom:0;left:0;position:absolute;right:0;top:0}.nsm7Bb-HzV7m-LgbsSe:focus,.nsm7Bb-HzV7m-LgbsSe:hover{box-shadow:none;border-color:rgb(210,227,252);outline:none}.nsm7Bb-HzV7m-LgbsSe:focus-within{outline:2px solid #00639b;border-color:transparent}.nsm7Bb-HzV7m-LgbsSe:hover .nsm7Bb-HzV7m-LgbsSe-MJoBVe{background:rgba(66,133,244,.08)}.nsm7Bb-HzV7m-LgbsSe:active .nsm7Bb-HzV7m-LgbsSe-MJoBVe,.nsm7Bb-HzV7m-LgbsSe:focus .nsm7Bb-HzV7m-LgbsSe-MJoBVe{background:rgba(66,133,244,.1)}.nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:hover .nsm7Bb-HzV7m-LgbsSe-MJoBVe{background:rgba(255,255,255,.24)}.nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:active .nsm7Bb-HzV7m-LgbsSe-MJoBVe,.nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:focus .nsm7Bb-HzV7m-LgbsSe-MJoBVe{background:rgba(255,255,255,.32)}.nsm7Bb-HzV7m-LgbsSe .n1UuX-DkfjY{border-radius:50%;display:-webkit-box;display:-webkit-flex;display:flex;height:20px;margin-left:-4px;margin-right:8px;min-width:20px;width:20px}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId{font-family:Roboto;font-size:12px;text-align:left}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff .fmcmS,.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .ssJRIf{overflow:hidden;text-overflow:ellipsis}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-align-items:center;-webkit-box-align:center;align-items:center;color:#5f6368;fill:#5f6368;font-size:11px;font-weight:400}.nsm7Bb-HzV7m-LgbsSe.jVeSEe.MFS4be-Ia7Qfc .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff{color:#e8eaed;fill:#e8eaed}@media screen and (prefers-contrast:more){.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff,.nsm7Bb-HzV7m-LgbsSe.jVeSEe.MFS4be-Ia7Qfc .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff{color:#000;fill:#000}}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff .Bz112c{height:18px;margin:-3px -3px -3px 2px;min-width:18px;width:18px}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-top-left-radius:0;border-bottom-left-radius:0;border-top-right-radius:3px;border-bottom-right-radius:3px;margin-left:12px;margin-right:-10px}.nsm7Bb-HzV7m-LgbsSe.jVeSEe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{border-radius:18px}.L5Fo6c-sM5MNb{border:0;display:block;left:0;position:relative;top:0}.L5Fo6c-bF1uUb{border-radius:4px;bottom:0;cursor:pointer;left:0;position:absolute;right:0;top:0}.L5Fo6c-bF1uUb:focus{border:none;outline:none}sentinel{}</style><link id="googleidentityservice" type="text/css" media="all" href="./jasonnnnnnn_files/style" rel="stylesheet"><script async="" src="./jasonnnnnnn_files/client"></script><link id="googleidentityservice" type="text/css" media="all" href="./jasonnnnnnn_files/style" rel="stylesheet"><script async="" src="./jasonnnnnnn_files/client"></script><link id="googleidentityservice" type="text/css" media="all" href="./jasonnnnnnn_files/style" rel="stylesheet"><script async="" src="./jasonnnnnnn_files/client"></script><link id="googleidentityservice" type="text/css" media="all" href="./jasonnnnnnn_files/style" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="https://onecompiler.com/favicon.ico"><title>JavaScript Online Compiler &amp; Interpreter</title><meta name="description" content="OneCompiler&#39;s JavaScript online editor helps you to write, compile, debug and run JavaScript code online"><script async="" src="./jasonnnnnnn_files/client"></script><link id="googleidentityservice" type="text/css" media="all" href="./jasonnnnnnn_files/style" rel="stylesheet"></head><body style=""><div hidden=""></div><script>((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=["light","dark"];function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{let c="class"===a,d=c&&f?e.map(a=>f[a]||a):e;c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)}),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&"system"===a?window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light":a;k(d)}catch(a){}})("class","theme","light",null,["light","dark"],null,true,true)</script><div id="_rht_toaster" style="position:fixed;z-index:9999;top:16px;left:16px;right:16px;bottom:16px;pointer-events:none"></div><!--$--><!--/$--><!--$--><!--/$--><script src="./jasonnnnnnn_files/webpack-bde296e76d3969e5.js.download" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[93227,[\"1213\",\"static/chunks/1213-28bbfada765fedce.js\",\"4517\",\"static/chunks/4517-f10f0e681b821c53.js\",\"6803\",\"static/chunks/6803-8fad9bb8baacc42e.js\",\"4468\",\"static/chunks/4468-c3c2aac732637727.js\",\"7177\",\"static/chunks/app/layout-954dc5a1f356f82b.js\"],\"default\"]\n3:I[9766,[],\"\"]\n4:I[98924,[],\"\"]\n6:I[24431,[],\"OutletBoundary\"]\n8:I[15278,[],\"AsyncMetadataOutlet\"]\na:I[24431,[],\"ViewportBoundary\"]\nc:I[24431,[],\"MetadataBoundary\"]\nd:\"$Sreact.suspense\"\nf:I[57150,[],\"\"]\n10:I[38730,[\"2619\",\"static/chunks/2619-04bc32f026a0d946.js\",\"8605\",\"static/chunks/8605-fd15ebc4b3901fb7.js\",\"4960\",\"static/chunks/app/%5Blanguage%5D/%5B%5B...codeId%5D%5D/page-6a1ae2e6205a4c62.js\"],\"default\"]\n13:I[38730,[\"2619\",\"static/chunks/2619-04bc32f026a0d946.js\",\"8605\",\"static/chunks/8605-fd15ebc4b3901fb7.js\",\"4960\",\"static/chunks/app/%5Blanguage%5D/%5B%5B...codeId%5D%5D/page-6a1ae2e6205a4c62.js\"],\"HideForEditorX\"]\n27:I[12529,[\"2619\",\"static/chunks/2619-04bc32f026a0d946.js\",\"8605\",\"static/chunks/8605-fd15ebc4b3901fb7.js\",\"4960\",\"static/chunks/app/%5Blanguage%5D/%5B%5B...codeId%5D%5D/page-6a1ae2e6205a4c62.js\"],\"default\"]\n28:I[48213,[\"2619\",\"static/chunks/2619-04bc32f026a0d946.js\",\"8605\",\"static/chunks/8605-fd15ebc4b3901fb7.js\",\"4960\",\"static/chunks/app/%5Blanguage%5D/%5B%5B...codeId%5D%5D/page-6a1ae2e6205a4c62.js\"],\"default\"]\n29:I[80622,[],\"IconMark\"]\n:HL[\"/_next/static/css/18771aaca4a75184.css\",\"style\"]\n:HL[\"/_next/static/css/f3bd22f6b7bf1e27.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"53d2a88b8bb95c37d1e617174bb7859b4635e13c\",\"p\":\"\",\"c\":[\"\",\"html\"],\"i\":false,\"f\":[[[\"\",{\"children\":[[\"language\",\"html\",\"d\"],{\"children\":[[\"codeId\",\"\",\"oc\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/18771aaca4a75184.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"link\",\"1\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/f3bd22f6b7bf1e27.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"suppressHydrationWarning\":true,\"children\":[[\"$\",\"head\",null,{\"children\":[[\"$\",\"meta\",null,{\"charSet\":\"utf-8\"}],[\"$\",\"script\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"\\n              (function() {\\n                try {\\n                  var theme = localStorage.getItem('theme');\\n                  if (!theme) {\\n                    var ocSettings = localStorage.getItem('oc:settings');\\n                    if (ocSettings) {\\n                      var parsed = JSON.parse(ocSettings);\\n                      if (parsed.theme) {\\n                        localStorage.setItem('theme', parsed.theme);\\n                      }\\n                    }\\n                  }\\n                } catch (e) {}\\n              })();\\n            \"}}],[\"$\",\"script\",null,{\"async\":true,\"src\":\"//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.0/highlight.min.js\"}],[\"$\",\"link\",null,{\"rel\":\"stylesheet\",\"href\":\"//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.0/styles/github.min.css\"}]]}],[\"$\",\"body\",null,{\"children\":[\"$\",\"$L2\",null,{\"children\":[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]}]]}]]}],{\"children\":[[\"language\",\"html\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"codeId\",\"\",\"oc\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L5\",null,[\"$\",\"$L6\",null,{\"children\":[\"$L7\",[\"$\",\"$L8\",null,{\"promise\":\"$@9\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[[\"$\",\"$La\",null,{\"children\":\"$Lb\"}],null],[\"$\",\"$Lc\",null,{\"children\":[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$d\",null,{\"fallback\":null,\"children\":\"$Le\"}]}]}]]}],false]],\"m\":\"$undefined\",\"G\":[\"$f\",[]],\"s\":false,\"S\":false}\n"])</script><script>self.__next_f.push([1,"11:Tb91,"])</script><script>self.__next_f.push([1,"# HTML Online Editor \u0026 Compiler\n\nWrite, Run \u0026 Share HTML code online using OneCompiler's HTML online Code editor for free. It's one of the robust, feature-rich online Code editor for HTML language, running on HTML5. Getting started with the OneCompiler's HTML compiler is simple and pretty fast. The editor shows sample boilerplate code when you choose language as `HTML`. You can also specify the stylesheet information in `styles.css` tab and scripts information in `scripts.js` tab and start coding.\n\n# About HTML\n\nHTML(Hyper Text Markup language) is the standard markup language for Web pages, was created by Berners-Lee in the year 1991. Almost every web page over internet might be using HTML.\n\n# Syntax help\n\n## Fundamentals\n\n- Any HTML document must start with document declaration `\u003c!DOCTYPE html\u003e`\n- HTML documents begin with `\u003chtml\u003e` and ends with `\u003c/html\u003e`\n- Headings are defined with `\u003ch1\u003e` to `\u003ch6\u003e` where `\u003ch1\u003e` is the highest important heading and `\u003ch6\u003e` is the least important sub-heading.\n- Paragraphs are defined in `\u003cp\u003e..\u003c/p\u003e` tag.\n- Links are defined in `\u003ca\u003e` tag.\n  #### Example:\n  ```\n  \u003ca href=\"https://onecompiler.com/html\"\u003eHTML online compiler\u003c/a\u003e\n  ```\n- Images are defined in `\u003cimg\u003e` tag, where `src` attribute consists of image name.\n- Buttons are defined in `\u003cbutton\u003e..\u003c/button\u003e` tag\n- Lists are defined in `\u003cul\u003e` for unordered/bullet list and `\u003col\u003e` for ordered/number list, and the list items are defined in `\u003cli\u003e`.\n\n## HTML Elements and Attributes\n\n- HTML element is everything present from start tag to end tag.\n- The text present between start and end tag is called HTML element content.\n- Anything can be a tagname but it's preferred to put the meaningful title to the content present as tag name.\n- Do not forget the end tag.\n- Elements with no content are called empty elements.\n- Elements can have attributes which provides additional information about the element.\n- In the below example, href is an attribute and a is the tag name.\n  #### Example:\n  ```\n  \u003ca href=\"https://onecompiler.com/html\"\u003eHTML online compiler\u003c/a\u003e\n  ```\n\n## CSS\n\nCSS(cascading style sheets) describes how HTML elements will look on the web page like color, font-style, font-size, background color etc.\n\n### Example:\n\nBelow is a sample style sheet which displays heading in green and in Candara font with padding space of 25px.\n\n```css\nbody {\n  padding: 25px;\n}\n.title {\n  color: #228b22;\n  font-family: Candara;\n}\n```\n\n## HTML Tables\n\n- HTML Tables are defined in `\u003ctable\u003e` tag.\n- Table row should be defined in `\u003ctr\u003e` tag\n- Table header should be defined in `\u003cth\u003e` tag\n- Table data should be defined in `\u003ctd\u003e` tag\n- Table caption should be defined in `\u003ccaption\u003e` tag\n\n## HTML-Javascript\n\n- Javascript is used in HTML pages to make them more interactive.\n- `\u003cscript\u003e` is the tag used to write scripts in HTML\n- You can either reference a external script or write script code in this tag.\n\n### Example\n\n```html\n\u003cscript src=\"script.js\"\u003e\u003c/script\u003e\n```\n"])</script><script>self.__next_f.push([1,"5:[[\"$\",\"title\",null,{\"children\":\"HTML Online Editor (Compiler, Interpreter \u0026 Runner)\"}],[\"$\",\"meta\",null,{\"name\":\"description\",\"content\":\"OneCompiler's HTML online compiler helps you to write, compile, run and view HTML code online. It also supports CSS and JavaScript\"}],[\"$\",\"$d\",null,{\"fallback\":[\"$\",\"div\",null,{\"children\":\"Loading...\"}],\"children\":[\"$\",\"$L10\",null,{\"language\":\"html\",\"codeId\":null,\"docContent\":\"$11\"}]}],\"$L12\"]\n"])</script><script>self.__next_f.push([1,"12:[\"$\",\"$L13\",null,{\"children\":[[[\"$\",\"div\",null,{\"className\":\"max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 mt-8\",\"children\":[\"$\",\"div\",null,{\"className\":\"prose dark:prose-invert max-w-none md-view oc-theme-light\",\"children\":[[\"$\",\"h1\",\"0\",{\"children\":[\"HTML Online Editor \u0026 Compiler\"]}],\"\\n\",[\"$\",\"p\",\"2\",{\"children\":[\"Write, Run \u0026 Share HTML code online using OneCompiler's HTML online Code editor for free. It's one of the robust, feature-rich online Code editor for HTML language, running on HTML5. Getting started with the OneCompiler's HTML compiler is simple and pretty fast. The editor shows sample boilerplate code when you choose language as \",[\"$\",\"code\",\"1\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"HTML\",\"position\":{\"start\":{\"line\":3,\"column\":333,\"offset\":365},\"end\":{\"line\":3,\"column\":339,\"offset\":371}}}],\"position\":{\"start\":{\"line\":3,\"column\":333,\"offset\":365},\"end\":{\"line\":3,\"column\":339,\"offset\":371}}},\"children\":\"HTML\"}],\". You can also specify the stylesheet information in \",[\"$\",\"code\",\"3\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"styles.css\",\"position\":{\"start\":{\"line\":3,\"column\":392,\"offset\":424},\"end\":{\"line\":3,\"column\":404,\"offset\":436}}}],\"position\":{\"start\":{\"line\":3,\"column\":392,\"offset\":424},\"end\":{\"line\":3,\"column\":404,\"offset\":436}}},\"children\":\"styles.css\"}],\" tab and scripts information in \",[\"$\",\"code\",\"5\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"scripts.js\",\"position\":{\"start\":{\"line\":3,\"column\":436,\"offset\":468},\"end\":{\"line\":3,\"column\":448,\"offset\":480}}}],\"position\":{\"start\":{\"line\":3,\"column\":436,\"offset\":468},\"end\":{\"line\":3,\"column\":448,\"offset\":480}}},\"children\":\"scripts.js\"}],\" tab and start coding.\"]}],\"\\n\",[\"$\",\"h1\",\"4\",{\"children\":[\"About HTML\"]}],\"\\n\",[\"$\",\"p\",\"6\",{\"children\":[\"HTML(Hyper Text Markup language) is the standard markup language for Web pages, was created by Berners-Lee in the year 1991. Almost every web page over internet might be using HTML.\"]}],\"\\n\",[\"$\",\"h1\",\"8\",{\"children\":[\"Syntax help\"]}],\"\\n\",[\"$\",\"h2\",\"10\",{\"children\":[\"Fundamentals\"]}],\"\\n\",[\"$\",\"ul\",\"12\",{\"children\":[\"\\n\",[\"$\",\"li\",\"1\",{\"children\":[\"Any HTML document must start with document declaration \",[\"$\",\"code\",\"1\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003c!DOCTYPE html\u003e\",\"position\":{\"start\":{\"line\":13,\"column\":58,\"offset\":790},\"end\":{\"line\":13,\"column\":75,\"offset\":807}}}],\"position\":{\"start\":{\"line\":13,\"column\":58,\"offset\":790},\"end\":{\"line\":13,\"column\":75,\"offset\":807}}},\"children\":\"\u003c!DOCTYPE html\u003e\"}]]}],\"\\n\",[\"$\",\"li\",\"3\",{\"children\":[\"HTML documents begin with \",[\"$\",\"code\",\"1\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003chtml\u003e\",\"position\":{\"start\":{\"line\":14,\"column\":29,\"offset\":836},\"end\":{\"line\":14,\"column\":37,\"offset\":844}}}],\"position\":{\"start\":{\"line\":14,\"column\":29,\"offset\":836},\"end\":{\"line\":14,\"column\":37,\"offset\":844}}},\"children\":\"\u003chtml\u003e\"}],\" and ends with \",[\"$\",\"code\",\"3\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003c/html\u003e\",\"position\":{\"start\":{\"line\":14,\"column\":52,\"offset\":859},\"end\":{\"line\":14,\"column\":61,\"offset\":868}}}],\"position\":{\"start\":{\"line\":14,\"column\":52,\"offset\":859},\"end\":{\"line\":14,\"column\":61,\"offset\":868}}},\"children\":\"\u003c/html\u003e\"}]]}],\"\\n\",[\"$\",\"li\",\"5\",{\"children\":[\"Headings are defined with \",[\"$\",\"code\",\"1\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003ch1\u003e\",\"position\":{\"start\":{\"line\":15,\"column\":29,\"offset\":897},\"end\":{\"line\":15,\"column\":35,\"offset\":903}}}],\"position\":{\"start\":{\"line\":15,\"column\":29,\"offset\":897},\"end\":{\"line\":15,\"column\":35,\"offset\":903}}},\"children\":\"\u003ch1\u003e\"}],\" to \",[\"$\",\"code\",\"3\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003ch6\u003e\",\"position\":{\"start\":{\"line\":15,\"column\":39,\"offset\":907},\"end\":{\"line\":15,\"column\":45,\"offset\":913}}}],\"position\":{\"start\":{\"line\":15,\"column\":39,\"offset\":907},\"end\":{\"line\":15,\"column\":45,\"offset\":913}}},\"children\":\"\u003ch6\u003e\"}],\" where \",[\"$\",\"code\",\"5\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003ch1\u003e\",\"position\":{\"start\":{\"line\":15,\"column\":52,\"offset\":920},\"end\":{\"line\":15,\"column\":58,\"offset\":926}}}],\"position\":{\"start\":{\"line\":15,\"column\":52,\"offset\":920},\"end\":{\"line\":15,\"column\":58,\"offset\":926}}},\"children\":\"\u003ch1\u003e\"}],\" is the highest important heading and \",[\"$\",\"code\",\"7\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003ch6\u003e\",\"position\":{\"start\":{\"line\":15,\"column\":96,\"offset\":964},\"end\":{\"line\":15,\"column\":102,\"offset\":970}}}],\"position\":{\"start\":{\"line\":15,\"column\":96,\"offset\":964},\"end\":{\"line\":15,\"column\":102,\"offset\":970}}},\"children\":\"\u003ch6\u003e\"}],\" is the least important sub-heading.\"]}],\"\\n\",[\"$\",\"li\",\"7\",{\"children\":[\"Paragraphs are defined in \",[\"$\",\"code\",\"1\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003cp\u003e..\u003c/p\u003e\",\"position\":{\"start\":{\"line\":16,\"column\":29,\"offset\":1035},\"end\":{\"line\":16,\"column\":40,\"offset\":1046}}}],\"position\":{\"start\":{\"line\":16,\"column\":29,\"offset\":1035},\"end\":{\"line\":16,\"column\":40,\"offset\":1046}}},\"children\":\"\u003cp\u003e..\u003c/p\u003e\"}],\" tag.\"]}],\"\\n\",\"$L14\",\"\\n\",\"$L15\",\"\\n\",\"$L16\",\"\\n\",\"$L17\",\"\\n\"]}],\"\\n\",\"$L18\",\"\\n\",\"$L19\",\"\\n\",\"$L1a\",\"\\n\",\"$L1b\",\"\\n\",\"$L1c\",\"\\n\",\"$L1d\",\"\\n\",\"$L1e\",\"\\n\",\"$L1f\",\"\\n\",\"$L20\",\"\\n\",\"$L21\",\"\\n\",\"$L22\",\"\\n\",\"$L23\",\"\\n\",\"$L24\"]}]}],\"$L25\"],\"$L26\"]}]\n"])</script><script>self.__next_f.push([1,"14:[\"$\",\"li\",\"9\",{\"children\":[\"Links are defined in \",[\"$\",\"code\",\"1\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003ca\u003e\",\"position\":{\"start\":{\"line\":17,\"column\":24,\"offset\":1075},\"end\":{\"line\":17,\"column\":29,\"offset\":1080}}}],\"position\":{\"start\":{\"line\":17,\"column\":24,\"offset\":1075},\"end\":{\"line\":17,\"column\":29,\"offset\":1080}}},\"children\":\"\u003ca\u003e\"}],\" tag.\",\"\\n\",[\"$\",\"h4\",\"4\",{\"children\":[\"Example:\"]}],\"\\n\",[\"$\",\"pre\",\"6\",{\"style\":{\"backgroundColor\":\"#f5f5f5\",\"padding\":\"12px\",\"borderRadius\":\"4px\",\"overflowX\":\"auto\"},\"children\":[[\"$\",\"code\",\"0\",{\"className\":\"plaintext\",\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003ca href=\\\"https://onecompiler.com/html\\\"\u003eHTML online compiler\u003c/a\u003e\\n\"}],\"position\":{\"start\":{\"line\":19,\"column\":3,\"offset\":1104},\"end\":{\"line\":21,\"column\":6,\"offset\":1179}}},\"children\":\"\u003ca href=\\\"https://onecompiler.com/html\\\"\u003eHTML online compiler\u003c/a\u003e\\n\"}]]}],\"\\n\"]}]\n"])</script><script>self.__next_f.push([1,"15:[\"$\",\"li\",\"11\",{\"children\":[\"Images are defined in \",[\"$\",\"code\",\"1\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003cimg\u003e\",\"position\":{\"start\":{\"line\":22,\"column\":25,\"offset\":1204},\"end\":{\"line\":22,\"column\":32,\"offset\":1211}}}],\"position\":{\"start\":{\"line\":22,\"column\":25,\"offset\":1204},\"end\":{\"line\":22,\"column\":32,\"offset\":1211}}},\"children\":\"\u003cimg\u003e\"}],\" tag, where \",[\"$\",\"code\",\"3\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"src\",\"position\":{\"start\":{\"line\":22,\"column\":44,\"offset\":1223},\"end\":{\"line\":22,\"column\":49,\"offset\":1228}}}],\"position\":{\"start\":{\"line\":22,\"column\":44,\"offset\":1223},\"end\":{\"line\":22,\"column\":49,\"offset\":1228}}},\"children\":\"src\"}],\" attribute consists of image name.\"]}]\n"])</script><script>self.__next_f.push([1,"16:[\"$\",\"li\",\"13\",{\"children\":[\"Buttons are defined in \",[\"$\",\"code\",\"1\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003cbutton\u003e..\u003c/button\u003e\",\"position\":{\"start\":{\"line\":23,\"column\":26,\"offset\":1288},\"end\":{\"line\":23,\"column\":47,\"offset\":1309}}}],\"position\":{\"start\":{\"line\":23,\"column\":26,\"offset\":1288},\"end\":{\"line\":23,\"column\":47,\"offset\":1309}}},\"children\":\"\u003cbutton\u003e..\u003c/button\u003e\"}],\" tag\"]}]\n"])</script><script>self.__next_f.push([1,"17:[\"$\",\"li\",\"15\",{\"children\":[\"Lists are defined in \",[\"$\",\"code\",\"1\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003cul\u003e\",\"position\":{\"start\":{\"line\":24,\"column\":24,\"offset\":1337},\"end\":{\"line\":24,\"column\":30,\"offset\":1343}}}],\"position\":{\"start\":{\"line\":24,\"column\":24,\"offset\":1337},\"end\":{\"line\":24,\"column\":30,\"offset\":1343}}},\"children\":\"\u003cul\u003e\"}],\" for unordered/bullet list and \",[\"$\",\"code\",\"3\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003col\u003e\",\"position\":{\"start\":{\"line\":24,\"column\":61,\"offset\":1374},\"end\":{\"line\":24,\"column\":67,\"offset\":1380}}}],\"position\":{\"start\":{\"line\":24,\"column\":61,\"offset\":1374},\"end\":{\"line\":24,\"column\":67,\"offset\":1380}}},\"children\":\"\u003col\u003e\"}],\" for ordered/number list, and the list items are defined in \",[\"$\",\"code\",\"5\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003cli\u003e\",\"position\":{\"start\":{\"line\":24,\"column\":127,\"offset\":1440},\"end\":{\"line\":24,\"column\":133,\"offset\":1446}}}],\"position\":{\"start\":{\"line\":24,\"column\":127,\"offset\":1440},\"end\":{\"line\":24,\"column\":133,\"offset\":1446}}},\"children\":\"\u003cli\u003e\"}],\".\"]}]\n"])</script><script>self.__next_f.push([1,"18:[\"$\",\"h2\",\"14\",{\"children\":[\"HTML Elements and Attributes\"]}]\n"])</script><script>self.__next_f.push([1,"19:[\"$\",\"ul\",\"16\",{\"children\":[\"\\n\",[\"$\",\"li\",\"1\",{\"children\":[\"HTML element is everything present from start tag to end tag.\"]}],\"\\n\",[\"$\",\"li\",\"3\",{\"children\":[\"The text present between start and end tag is called HTML element content.\"]}],\"\\n\",[\"$\",\"li\",\"5\",{\"children\":[\"Anything can be a tagname but it's preferred to put the meaningful title to the content present as tag name.\"]}],\"\\n\",[\"$\",\"li\",\"7\",{\"children\":[\"Do not forget the end tag.\"]}],\"\\n\",[\"$\",\"li\",\"9\",{\"children\":[\"Elements with no content are called empty elements.\"]}],\"\\n\",[\"$\",\"li\",\"11\",{\"children\":[\"Elements can have attributes which provides additional information about the element.\"]}],\"\\n\",[\"$\",\"li\",\"13\",{\"children\":[\"In the below example, href is an attribute and a is the tag name.\",\"\\n\",[\"$\",\"h4\",\"2\",{\"children\":[\"Example:\"]}],\"\\n\",[\"$\",\"pre\",\"4\",{\"style\":{\"backgroundColor\":\"#f5f5f5\",\"padding\":\"12px\",\"borderRadius\":\"4px\",\"overflowX\":\"auto\"},\"children\":[[\"$\",\"code\",\"0\",{\"className\":\"plaintext\",\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003ca href=\\\"https://onecompiler.com/html\\\"\u003eHTML online compiler\u003c/a\u003e\\n\"}],\"position\":{\"start\":{\"line\":36,\"column\":3,\"offset\":1991},\"end\":{\"line\":38,\"column\":6,\"offset\":2066}}},\"children\":\"\u003ca href=\\\"https://onecompiler.com/html\\\"\u003eHTML online compiler\u003c/a\u003e\\n\"}]]}],\"\\n\"]}],\"\\n\"]}]\n"])</script><script>self.__next_f.push([1,"1a:[\"$\",\"h2\",\"18\",{\"children\":[\"CSS\"]}]\n1b:[\"$\",\"p\",\"20\",{\"children\":[\"CSS(cascading style sheets) describes how HTML elements will look on the web page like color, font-style, font-size, background color etc.\"]}]\n1c:[\"$\",\"h3\",\"22\",{\"children\":[\"Example:\"]}]\n1d:[\"$\",\"p\",\"24\",{\"children\":[\"Below is a sample style sheet which displays heading in green and in Candara font with padding space of 25px.\"]}]\n1e:[\"$\",\"pre\",\"26\",{\"style\":{\"backgroundColor\":\"#f5f5f5\",\"padding\":\"12px\",\"borderRadius\":\"4px\",\"overflowX\":\"auto\"},\"children\":[[\"$\",\"code\",\"0\",{\"className\":\"css\",\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{\"className\":[\"language-css\"]},\"children\":[{\"type\":\"text\",\"value\":\"body {\\n  padding: 25px;\\n}\\n.title {\\n  color: #228b22;\\n  font-family: Candara;\\n}\\n\"}],\"position\":{\"start\":{\"line\":48,\"column\":1,\"offset\":2341},\"end\":{\"line\":56,\"column\":4,\"offset\":2430}}},\"children\":\"body {\\n  padding: 25px;\\n}\\n.title {\\n  color: #228b22;\\n  font-family: Candara;\\n}\\n\"}]]}]\n1f:[\"$\",\"h2\",\"28\",{\"children\":[\"HTML Tables\"]}]\n"])</script><script>self.__next_f.push([1,"20:[\"$\",\"ul\",\"30\",{\"children\":[\"\\n\",[\"$\",\"li\",\"1\",{\"children\":[\"HTML Tables are defined in \",[\"$\",\"code\",\"1\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003ctable\u003e\",\"position\":{\"start\":{\"line\":60,\"column\":30,\"offset\":2477},\"end\":{\"line\":60,\"column\":39,\"offset\":2486}}}],\"position\":{\"start\":{\"line\":60,\"column\":30,\"offset\":2477},\"end\":{\"line\":60,\"column\":39,\"offset\":2486}}},\"children\":\"\u003ctable\u003e\"}],\" tag.\"]}],\"\\n\",[\"$\",\"li\",\"3\",{\"children\":[\"Table row should be defined in \",[\"$\",\"code\",\"1\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003ctr\u003e\",\"position\":{\"start\":{\"line\":61,\"column\":34,\"offset\":2525},\"end\":{\"line\":61,\"column\":40,\"offset\":2531}}}],\"position\":{\"start\":{\"line\":61,\"column\":34,\"offset\":2525},\"end\":{\"line\":61,\"column\":40,\"offset\":2531}}},\"children\":\"\u003ctr\u003e\"}],\" tag\"]}],\"\\n\",[\"$\",\"li\",\"5\",{\"children\":[\"Table header should be defined in \",[\"$\",\"code\",\"1\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003cth\u003e\",\"position\":{\"start\":{\"line\":62,\"column\":37,\"offset\":2572},\"end\":{\"line\":62,\"column\":43,\"offset\":2578}}}],\"position\":{\"start\":{\"line\":62,\"column\":37,\"offset\":2572},\"end\":{\"line\":62,\"column\":43,\"offset\":2578}}},\"children\":\"\u003cth\u003e\"}],\" tag\"]}],\"\\n\",[\"$\",\"li\",\"7\",{\"children\":[\"Table data should be defined in \",[\"$\",\"code\",\"1\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003ctd\u003e\",\"position\":{\"start\":{\"line\":63,\"column\":35,\"offset\":2617},\"end\":{\"line\":63,\"column\":41,\"offset\":2623}}}],\"position\":{\"start\":{\"line\":63,\"column\":35,\"offset\":2617},\"end\":{\"line\":63,\"column\":41,\"offset\":2623}}},\"children\":\"\u003ctd\u003e\"}],\" tag\"]}],\"\\n\",[\"$\",\"li\",\"9\",{\"children\":[\"Table caption should be defined in \",[\"$\",\"code\",\"1\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003ccaption\u003e\",\"position\":{\"start\":{\"line\":64,\"column\":38,\"offset\":2665},\"end\":{\"line\":64,\"column\":49,\"offset\":2676}}}],\"position\":{\"start\":{\"line\":64,\"column\":38,\"offset\":2665},\"end\":{\"line\":64,\"column\":49,\"offset\":2676}}},\"children\":\"\u003ccaption\u003e\"}],\" tag\"]}],\"\\n\"]}]\n"])</script><script>self.__next_f.push([1,"21:[\"$\",\"h2\",\"32\",{\"children\":[\"HTML-Javascript\"]}]\n"])</script><script>self.__next_f.push([1,"22:[\"$\",\"ul\",\"34\",{\"children\":[\"\\n\",[\"$\",\"li\",\"1\",{\"children\":[\"Javascript is used in HTML pages to make them more interactive.\"]}],\"\\n\",[\"$\",\"li\",\"3\",{\"children\":[[\"$\",\"code\",\"0\",{\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{},\"children\":[{\"type\":\"text\",\"value\":\"\u003cscript\u003e\",\"position\":{\"start\":{\"line\":69,\"column\":3,\"offset\":2770},\"end\":{\"line\":69,\"column\":13,\"offset\":2780}}}],\"position\":{\"start\":{\"line\":69,\"column\":3,\"offset\":2770},\"end\":{\"line\":69,\"column\":13,\"offset\":2780}}},\"children\":\"\u003cscript\u003e\"}],\" is the tag used to write scripts in HTML\"]}],\"\\n\",[\"$\",\"li\",\"5\",{\"children\":[\"You can either reference a external script or write script code in this tag.\"]}],\"\\n\"]}]\n"])</script><script>self.__next_f.push([1,"23:[\"$\",\"h3\",\"36\",{\"children\":[\"Example\"]}]\n24:[\"$\",\"pre\",\"38\",{\"style\":{\"backgroundColor\":\"#f5f5f5\",\"padding\":\"12px\",\"borderRadius\":\"4px\",\"overflowX\":\"auto\"},\"children\":[[\"$\",\"code\",\"0\",{\"className\":\"html\",\"node\":{\"type\":\"element\",\"tagName\":\"code\",\"properties\":{\"className\":[\"language-html\"]},\"children\":[{\"type\":\"text\",\"value\":\"\u003cscript src=\\\"script.js\\\"\u003e\u003c/script\u003e\\n\"}],\"position\":{\"start\":{\"line\":74,\"column\":1,\"offset\":2915},\"end\":{\"line\":76,\"column\":4,\"offset\":2960}}},\"children\":\"\u003cscript src=\\\"script.js\\\"\u003e\u003c/script\u003e\\n\"}]]}]\n25:[\"$\",\"$L27\",null,{}]\n26:[\"$\",\"$L28\",null,{}]\nb:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n7:null\n9:{\"metadata\":[[\"$\",\"link\",\"0\",{\"rel\":\"icon\",\"href\":\"/favicon.ico\"}],[\"$\",\"$L29\",\"1\",{}]],\"error\":null,\"digest\":\"$undefined\"}\ne:\"$9:metadata\"\n"])</script><script defer="" src="./jasonnnnnnn_files/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;b6c6421bde3c48e5ac7f9b8dbecc7bd7&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+<script async="" src="./jasonnnnnnn_files/js(1)"></script><next-route-announcer style="position: absolute;"><template shadowrootmode="open"><div aria-live="assertive" id="__next-route-announcer__" role="alert" style="position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;">JavaScript Online Compiler &amp; Interpreter</div></template></next-route-announcer><header class="bg-background"><div class="flex items-center h-12 px-2"><button data-slot="sheet-trigger" data-variant="ghost" data-size="icon" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#39;size-&#39;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-9 -ml-2 mr-2 text-muted-foreground" aria-label="Menu" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-_r_91_" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-5 w-5" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button><a class="pl-1 pr-2.5 pt-px" href="https://onecompiler.com/"><div class="h-[27px] w-[180px] bg-no-repeat bg-auto bg-center cursor-pointer"><img alt="OneCompiler" class="h-full w-full object-contain dark:hidden" src="./jasonnnnnnn_files/oc_logo_v4_light.svg"><img alt="OneCompiler" class="h-full w-full object-contain hidden dark:block" src="./jasonnnnnnn_files/oc_logo_v4_dark.svg"></div></a><span class="flex-grow"></span><span class="hidden sm:block"><button data-slot="tooltip-trigger" data-variant="ghost" data-size="icon" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#39;size-&#39;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-9" aria-label="search" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search h-5 w-5 text-primary dark:text-foreground" aria-hidden="true"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg></button></span><button data-slot="tooltip-trigger" data-variant="ghost" data-size="icon" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#39;size-&#39;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-9" aria-label="dark mode" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun h-5 w-5 text-primary dark:text-foreground" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button><div class="hidden md:flex items-center ml-2"><a href="https://onecompiler.com/pricing"><button data-slot="button" data-variant="ghost" data-size="default" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#39;size-&#39;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 h-9 py-2 has-[&gt;svg]:px-3 text-[15px] font-normal text-primary hover:text-primary dark:text-foreground dark:hover:text-foreground px-2 pr-3">Pricing</button></a><div class="relative"><button data-slot="button" data-variant="ghost" data-size="default" class="inline-flex items-center justify-center whitespace-nowrap rounded-md transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#39;size-&#39;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 h-9 py-2 has-[&gt;svg]:px-3 text-[15px] font-normal text-primary hover:text-primary dark:text-foreground dark:hover:text-foreground gap-1 px-2">Learn<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 transition-transform duration-100 rotate-0" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></div><div class="relative"><button data-slot="button" data-variant="ghost" data-size="default" class="inline-flex items-center justify-center whitespace-nowrap rounded-md transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#39;size-&#39;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 h-9 py-2 has-[&gt;svg]:px-3 text-[15px] font-normal text-primary hover:text-primary dark:text-foreground dark:hover:text-foreground gap-1 px-2">Code<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 transition-transform duration-100 rotate-0" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></div><div class="relative"><button data-slot="button" data-variant="ghost" data-size="default" class="inline-flex items-center justify-center whitespace-nowrap rounded-md transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#39;size-&#39;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 h-9 py-2 has-[&gt;svg]:px-3 text-[15px] font-normal text-primary hover:text-primary dark:text-foreground dark:hover:text-foreground gap-1 px-2">Deploy<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 transition-transform duration-100 rotate-0" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></div><div class="relative"><button data-slot="button" data-variant="ghost" data-size="default" class="inline-flex items-center justify-center whitespace-nowrap rounded-md transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#39;size-&#39;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 h-9 py-2 has-[&gt;svg]:px-3 text-[15px] font-normal text-primary hover:text-primary dark:text-foreground dark:hover:text-foreground gap-1 px-2">More<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 transition-transform duration-100 rotate-0" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></div><span class="mx-4 h-10 border-r border-muted-foreground/30"></span><button data-slot="button" data-variant="ghost" data-size="default" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#39;size-&#39;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 h-9 px-4 py-2 has-[&gt;svg]:px-3">Login</button></div></div></header><div data-orientation="horizontal" role="none" data-slot="separator" class="shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px bg-border/50"></div><div class="flex justify-center"><div class="w-full"><div></div><div class="shadow-[0_2px_10px_0_rgba(23,70,161,.11)]"><div class="border rounded-md"><div class="hidden sm:flex flex-row justify-between items-center bg-muted"><div class="flex justify-between items-center"><div class="flex flex-row items-center"><div role="tablist" class="flex overflow-x-auto [&amp;::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"><button type="button" role="tab" aria-selected="true" class="group inline-flex items-center px-3 py-3 text-sm font-medium transition-colors hover:text-primary dark:hover:text-foreground border-b-2 text-primary dark:text-foreground border-primary dark:border-foreground"><span>index.js</span><span class="inline-flex items-center ml-1 group-hover:visible visible md:invisible"><span role="button" tabindex="0" aria-label="Edit index.js" class="inline-flex items-center justify-center h-5 w-5 ml-1 rounded hover:bg-accent cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil h-3 w-3" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg></span><span role="button" tabindex="0" aria-label="Delete index.js" class="inline-flex items-center justify-center h-5 w-5 ml-1 rounded hover:bg-accent cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x h-3 w-3" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></span></span></button></div><button data-slot="dropdown-menu-trigger" data-variant="ghost" data-size="icon" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#39;size-&#39;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-9" aria-label="more-options-add-file" type="button" id="radix-_r_9o_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus h-5 w-5 text-muted-foreground dark:text-foreground" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button></div></div><div><div class="flex justify-between items-end"><h1 itemprop="headline" class="text-base text-primary flex items-center ">44mz8shbr<button aria-label="Edit" class="ml-1.5 text-primary hover:text-primary/80"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil h-4 w-4" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg></button></h1></div></div><div><div class="flex items-center justify-center sm:justify-end"><div class="pr-2.5"><button data-slot="tooltip-trigger" data-variant="default" data-size="sm" class="inline-flex items-center justify-center whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#39;size-&#39;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive rounded-md gap-1.5 has-[&gt;svg]:px-2.5 bg-emerald-500 hover:bg-emerald-600 text-white h-7 px-1 text-sm mr-1" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles mr-0.5 h-3.5 w-3.5" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>AI</button></div><button data-slot="tooltip-trigger" data-variant="default" data-size="sm" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#39;size-&#39;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-primary-foreground h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 mr-2.5 bg-primary/90 hover:bg-primary-dark" data-state="closed">JAVASCRIPT <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 ml-1" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button><button data-slot="tooltip-trigger" data-variant="secondary" data-size="sm" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#39;size-&#39;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-secondary-foreground h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 mr-2.5 bg-secondary/95 hover:bg-secondary-dark" data-state="closed">RUN <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play h-4 w-4 ml-1 fill-current" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg></button><button data-slot="dropdown-menu-trigger" data-variant="ghost" data-size="icon" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#39;size-&#39;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-9" aria-label="more-options" type="button" id="radix-_r_ai_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis-vertical h-5 w-5" aria-hidden="true"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button><button data-slot="tooltip-trigger" data-variant="ghost" data-size="icon" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#39;size-&#39;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-9" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-maximize h-5 w-5" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"></path><path d="M21 8V5a2 2 0 0 0-2-2h-3"></path><path d="M3 16v3a2 2 0 0 0 2 2h3"></path><path d="M16 21h3a2 2 0 0 0 2-2v-3"></path></svg></button></div></div></div><div class="flex sm:hidden flex-col justify-between items-center bg-muted pt-1"><div class="w-full"><div class="flex items-center justify-center sm:justify-end"><div class="pr-2.5"><button data-slot="tooltip-trigger" data-variant="default" data-size="sm" class="inline-flex items-center justify-center whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#39;size-&#39;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive rounded-md gap-1.5 has-[&gt;svg]:px-2.5 bg-emerald-500 hover:bg-emerald-600 text-white h-7 px-1 text-sm mr-1" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles mr-0.5 h-3.5 w-3.5" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>AI</button></div><button data-slot="tooltip-trigger" data-variant="default" data-size="sm" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#39;size-&#39;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-primary-foreground h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 mr-2.5 bg-primary/90 hover:bg-primary-dark" data-state="closed">JAVASCRIPT <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 ml-1" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button><button data-slot="tooltip-trigger" data-variant="secondary" data-size="sm" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#39;size-&#39;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-secondary-foreground h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 mr-2.5 bg-secondary/95 hover:bg-secondary-dark" data-state="closed">RUN <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play h-4 w-4 ml-1 fill-current" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg></button><button data-slot="dropdown-menu-trigger" data-variant="ghost" data-size="icon" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#39;size-&#39;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-9" aria-label="more-options" type="button" id="radix-_r_an_" aria-haspopup="menu" aria-expanded="false" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis-vertical h-5 w-5" aria-hidden="true"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button><button data-slot="tooltip-trigger" data-variant="ghost" data-size="icon" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#39;size-&#39;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-9" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-maximize h-5 w-5" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"></path><path d="M21 8V5a2 2 0 0 0-2-2h-3"></path><path d="M3 16v3a2 2 0 0 0 2 2h3"></path><path d="M16 21h3a2 2 0 0 0 2-2v-3"></path></svg></button></div></div></div><div class="" data-panel-group="" data-panel-group-direction="horizontal" data-panel-group-id="_r_a8_" style="display: flex; flex-direction: row; height: 100%; overflow: hidden; width: 100%;"><div class="" id="_r_a9_" data-panel-group-id="_r_a8_" data-panel="" data-panel-id="_r_a9_" data-panel-size="60.0" style="flex: 60 1 0px; overflow: hidden;"><div id="oc_ace" class=" ace_editor ace-github" style="width: 100%; height: calc(-100px + 100vh); font-size: 14px;"><textarea class="ace_text-input" wrap="off" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-haspopup="false" aria-autocomplete="both" role="textbox" aria-label="Cursor at row 12" style="opacity: 0; font-size: 1px; height: 1px; width: 1px; top: 192px; left: 60px;"></textarea><div class="ace_gutter" aria-hidden="true" style="left: 0px; width: 49px;"><div class="ace_layer ace_gutter-layer ace_folding-enabled" style="height: 1e+06px; top: 0px; left: 0px; width: 49px;"><div class="ace_gutter-cell " aria-hidden="false" style="height: 16px; top: 0px;">1<span tabindex="-1" class="ace_fold-widget ace_start ace_open" aria-expanded="true" title="Fold code" role="button" aria-label="Toggle code folding, rows 1 through 12" style="display: inline-block; height: 16px;"></span><span tabindex="0" style="display: none;"><span></span></span></div><div class="ace_gutter-cell " aria-hidden="true" style="height: 16px; top: 16px;">2<span tabindex="0" style="display: none;"></span><span tabindex="0" style="display: none;"><span></span></span></div><div class="ace_gutter-cell " aria-hidden="true" style="height: 16px; top: 32px;">3<span tabindex="0" style="display: none;"></span><span tabindex="0" style="display: none;"><span></span></span></div><div class="ace_gutter-cell " aria-hidden="true" style="height: 16px; top: 48px;">4<span tabindex="0" style="display: none;"></span><span tabindex="0" style="display: none;"><span></span></span></div><div class="ace_gutter-cell " aria-hidden="true" style="height: 16px; top: 64px;">5<span tabindex="0" style="display: none;"></span><span tabindex="0" style="display: none;"><span></span></span></div><div class="ace_gutter-cell " aria-hidden="false" style="height: 16px; top: 80px;">6<span class="ace_fold-widget ace_start ace_open" role="button" tabindex="-1" aria-label="Toggle code folding, rows 6 through 11" aria-expanded="true" title="Fold code" style="height: 16px; display: inline-block;"></span><span tabindex="0" style="display: none;"><span></span></span></div><div class="ace_gutter-cell " aria-hidden="true" style="height: 16px; top: 96px;">7<span tabindex="0" style="display: none;"></span><span tabindex="0" style="display: none;"><span></span></span></div><div class="ace_gutter-cell " aria-hidden="true" style="height: 16px; top: 112px;">8<span tabindex="0" style="display: none;"></span><span tabindex="0" style="display: none;"><span></span></span></div><div class="ace_gutter-cell " aria-hidden="true" style="height: 16px; top: 128px;">9<span tabindex="0" style="display: none;"></span><span tabindex="0" style="display: none;"><span></span></span></div><div class="ace_gutter-cell " aria-hidden="true" style="height: 16px; top: 144px;">10<span tabindex="0" style="display: none;"></span><span tabindex="0" style="display: none;"><span></span></span></div><div class="ace_gutter-cell " aria-hidden="true" style="height: 16px; top: 160px;">11<span tabindex="0" style="display: none;"></span><span tabindex="0" style="display: none;"><span></span></span></div><div class="ace_gutter-cell ace_gutter-active-line " aria-hidden="true" style="height: 16px; top: 176px;">12<span tabindex="0" style="display: none;"></span><span tabindex="0" style="display: none;"><span></span></span></div></div></div><div class="ace_scroller " style="line-height: 16px; left: 49px; right: 0px; bottom: 0px;"><div class="ace_content" style="top: 0px; left: 0px; width: 832px; height: 680px;"><div class="ace_layer ace_print-margin-layer"><div class="ace_print-margin" style="left: 620px; visibility: hidden;"></div></div><div class="ace_layer ace_marker-layer"><div class="ace_active-line" style="height: 16px; top: 176px; left: 0px; right: 0px;"></div><div class="ace_bracket ace_start ace_br15" style="height: 16px; width: 7.69727px; top: 176px; left: 4px;"></div><div class="ace_bracket ace_start ace_br15" style="height: 16px; width: 7.69727px; top: 0px; left: 4px;"></div></div><div class="ace_layer ace_text-layer" style="height: 1e+06px; margin: 0px 4px; top: 0px; left: 0px;"><div class="ace_line" style="height: 16px; top: 0px;"><span class="ace_paren ace_lparen">{</span></div><div class="ace_line" style="height: 16px; top: 16px;">  <span class="ace_string">"name"</span><span class="ace_punctuation ace_operator">:</span> <span class="ace_string">"emotion-ai"</span><span class="ace_punctuation ace_operator">,</span></div><div class="ace_line" style="height: 16px; top: 32px;">  <span class="ace_string">"version"</span><span class="ace_punctuation ace_operator">:</span> <span class="ace_string">"1.0.0"</span><span class="ace_punctuation ace_operator">,</span></div><div class="ace_line" style="height: 16px; top: 48px;">  <span class="ace_string">"type"</span><span class="ace_punctuation ace_operator">:</span> <span class="ace_string">"module"</span><span class="ace_punctuation ace_operator">,</span></div><div class="ace_line" style="height: 16px; top: 64px;">  <span class="ace_string">"main"</span><span class="ace_punctuation ace_operator">:</span> <span class="ace_string">"server.js"</span><span class="ace_punctuation ace_operator">,</span></div><div class="ace_line" style="height: 16px; top: 80px;">  <span class="ace_string">"dependencies"</span><span class="ace_punctuation ace_operator">:</span> <span class="ace_paren ace_lparen">{</span></div><div class="ace_line" style="height: 16px; top: 96px;"><span class="ace_indent-guide">  </span>  <span class="ace_string">"cors"</span><span class="ace_punctuation ace_operator">:</span> <span class="ace_string">"^2.8.5"</span><span class="ace_punctuation ace_operator">,</span></div><div class="ace_line" style="height: 16px; top: 112px;"><span class="ace_indent-guide">  </span>  <span class="ace_string">"dotenv"</span><span class="ace_punctuation ace_operator">:</span> <span class="ace_string">"^16.0.0"</span><span class="ace_punctuation ace_operator">,</span></div><div class="ace_line" style="height: 16px; top: 128px;"><span class="ace_indent-guide">  </span>  <span class="ace_string">"express"</span><span class="ace_punctuation ace_operator">:</span> <span class="ace_string">"^4.18.2"</span><span class="ace_punctuation ace_operator">,</span></div><div class="ace_line" style="height: 16px; top: 144px;"><span class="ace_indent-guide">  </span>  <span class="ace_string">"openai"</span><span class="ace_punctuation ace_operator">:</span> <span class="ace_string">"^4.0.0"</span></div><div class="ace_line" style="height: 16px; top: 160px;">  <span class="ace_paren ace_rparen">}</span></div><div class="ace_line" style="height: 16px; top: 176px;"><span class="ace_paren ace_rparen">}</span></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_cursor-layer ace_hidden-cursors"><div class="ace_cursor" style="display: block; top: 176px; left: 12px; width: 8px; height: 16px; animation-duration: 1000ms;"></div></div></div></div><div class="ace_scrollbar ace_scrollbar-v" style="display: none; width: 20px; height: 648px; bottom: 0px;"><div class="ace_scrollbar-inner" style="width: 20px; height: 192px;">&nbsp;</div></div><div class="ace_scrollbar ace_scrollbar-h" style="display: none; height: 20px; left: 49px; right: 0px; width: 832px;"><div class="ace_scrollbar-inner" style="height: 20px; width: 832px;">&nbsp;</div></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: hidden;"><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: visible;">הההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההה</div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; overflow: visible;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div></div><div class="ace_tooltip ace_gutter-tooltip" tabindex="-1" role="tooltip" id="gt5" style="display: none; white-space: pre-wrap; pointer-events: auto;"></div></div></div><div class="w-[5px] bg-gray-100 hover:bg-gray-300 transition-colors" role="separator" tabindex="0" data-panel-group-direction="horizontal" data-panel-group-id="_r_a8_" data-resize-handle="" data-panel-resize-handle-enabled="true" data-panel-resize-handle-id="_r_aa_" data-resize-handle-state="inactive" aria-controls="_r_a9_" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" style="touch-action: none; user-select: none;"></div><div class="" id="_r_ab_" data-panel-group-id="_r_a8_" data-panel="" data-panel-id="_r_ab_" data-panel-size="40.0" style="flex: 40 1 0px; overflow: hidden;"><div style="height: 100%;"><div class="" data-panel-group="" data-panel-group-direction="vertical" data-panel-group-id="_r_aq_" style="display: flex; flex-direction: column; height: 100%; overflow: hidden; width: 100%;"><div class="" id="_r_ar_" data-panel-group-id="_r_aq_" data-panel="" data-panel-id="_r_ar_" data-panel-size="11.0" style="flex: 11 1 0px; overflow: hidden;"><div class="h-full overflow-auto flex flex-col"><div class="flex flex-col h-full"><label data-slot="label" class="flex items-center gap-2 font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 text-xs text-muted-foreground px-2 pt-2">STDIN</label><textarea data-slot="textarea" class="border-input placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive flex field-sizing-content min-h-16 w-full px-3 py-2 shadow-xs transition-[color,box-shadow] outline-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 resize-none border-0 focus-visible:ring-0 rounded-none text-sm bg-transparent dark:bg-transparent" placeholder="Input for the program ( Optional )"></textarea></div></div></div><div class="bg-gray-100" role="separator" tabindex="0" data-panel-group-direction="vertical" data-panel-group-id="_r_aq_" data-resize-handle="" data-panel-resize-handle-enabled="true" data-panel-resize-handle-id="_r_as_" data-resize-handle-state="inactive" aria-controls="_r_ar_" aria-valuemax="100" aria-valuemin="0" aria-valuenow="11" style="touch-action: none; user-select: none; height: 1px;"></div><div class="" id="_r_at_" data-panel-group-id="_r_aq_" data-panel="" data-panel-id="_r_at_" data-panel-size="89.0" style="flex: 89 1 0px; overflow: hidden;"><div class="pl-2 overflow-auto max-h-full border-t border-red-400"><div class="flex items-center justify-between my-3 pr-2"><p class="text-sm">Output:</p><span class="text-xs text-muted-foreground cursor-default" data-state="closed" data-slot="tooltip-trigger">18 ms | 46.2 MB</span></div><div><pre class="text-sm leading-[1.43]">/box/index.js:2
+  "name": "emotion-ai",
+        ^
+
+SyntaxError: Unexpected token ':'
+    at wrapSafe (node:internal/modules/cjs/loader:1638:18)
+    at Module._compile (node:internal/modules/cjs/loader:1680:20)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49
+
+Node.js v22.22.0</pre></div></div></div></div></div></div></div><div></div></div></div></div></div><div><div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 mt-8"><div class="prose dark:prose-invert max-w-none md-view oc-theme-light"><h1>Javascript Online Compiler</h1>
+<p>Write, Run &amp; Share Javascript code online using OneCompiler's JS online compiler for free. It's one of the robust, feature-rich online compilers for Javascript language. Getting started with the OneCompiler's Javascript editor is easy and fast. The editor shows sample boilerplate code when you choose language as Javascript and start coding.</p>
+<h1>About Javascript</h1>
+<p>Javascript(JS) is a object-oriented programming language which adhere to ECMA Script Standards. Javascript is required to design the behaviour of the web pages.</p>
+<h1>Key Features</h1>
+<ul>
+<li>Open-source</li>
+<li>Just-in-time compiled language</li>
+<li>Embedded along with HTML and makes web pages alive</li>
+<li>Originally named as LiveScript.</li>
+<li>Executable in both browser and server which has Javascript engines like V8(chrome), SpiderMonkey(Firefox) etc.</li>
+</ul>
+<h1>Syntax help</h1>
+<h2>STDIN Example</h2>
+<pre style="background-color: rgb(245, 245, 245); padding: 12px; border-radius: 4px; overflow-x: auto;"><code class="javascript hljs" node="[object Object]"><span class="hljs-keyword">var</span> readline = <span class="hljs-built_in">require</span>(<span class="hljs-string">"readline"</span>)
+<span class="hljs-keyword">var</span> rl = readline.createInterface({
+  <span class="hljs-attr">input</span>: process.stdin,
+  <span class="hljs-attr">output</span>: process.stdout,
+  <span class="hljs-attr">terminal</span>: <span class="hljs-literal">false</span>,
+})
+
+rl.on(<span class="hljs-string">"line"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">line</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Hello, "</span> + line)
+})
+</code></pre>
+<h2>variable declaration</h2>
+<table><thead><tr><th>Keyword</th><th>Description</th><th>Scope</th></tr></thead><tbody><tr><td>var</td><td>Var is used to declare variables(old way of declaring variables)</td><td>Function or global scope</td></tr><tr><td>let</td><td>let is also used to declare variables(new way)</td><td>Global or block Scope</td></tr><tr><td>const</td><td>const is used to declare const values. Once the value is assigned, it can not be modified</td><td>Global or block Scope</td></tr></tbody></table>
+<h2>Backtick Strings</h2>
+<h3>Interpolation</h3>
+<pre style="background-color: rgb(245, 245, 245); padding: 12px; border-radius: 4px; overflow-x: auto;"><code class="javascript hljs" node="[object Object]"><span class="hljs-keyword">let</span> greetings = <span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>`</span>
+</code></pre>
+<h3>Multi line Strings</h3>
+<pre style="background-color: rgb(245, 245, 245); padding: 12px; border-radius: 4px; overflow-x: auto;"><code class="plaintext hljs" node="[object Object]">const msg = `
+hello
+world!
+`
+</code></pre>
+<h2>Arrays</h2>
+<p>An array is a collection of items or values.</p>
+<h3>Syntax:</h3>
+<pre style="background-color: rgb(245, 245, 245); padding: 12px; border-radius: 4px; overflow-x: auto;"><code class="javascript hljs" node="[object Object]"><span class="hljs-keyword">let</span> arrayName = [value1, value2,..etc];
+<span class="hljs-comment">// or</span>
+<span class="hljs-keyword">let</span> arrayName = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-string">"value1"</span>,<span class="hljs-string">"value2"</span>,..etc);
+</code></pre>
+<h3>Example:</h3>
+<pre style="background-color: rgb(245, 245, 245); padding: 12px; border-radius: 4px; overflow-x: auto;"><code class="javascript hljs" node="[object Object]"><span class="hljs-keyword">let</span> mobiles = [<span class="hljs-string">"iPhone"</span>, <span class="hljs-string">"Samsung"</span>, <span class="hljs-string">"Pixel"</span>]
+
+<span class="hljs-comment">// accessing an array</span>
+<span class="hljs-built_in">console</span>.log(mobiles[<span class="hljs-number">0</span>])
+
+<span class="hljs-comment">// changing an array element</span>
+mobiles[<span class="hljs-number">3</span>] = <span class="hljs-string">"Nokia"</span>
+</code></pre>
+<h2>Arrow functions</h2>
+<p>Arrow Functions helps developers to write code in concise way, it’s introduced in ES6.<br>
+Arrow functions can be written in multiple ways. Below are couple of ways to use arrow function but it can be written in many other ways as well.</p>
+<h3>Syntax:</h3>
+<pre style="background-color: rgb(245, 245, 245); padding: 12px; border-radius: 4px; overflow-x: auto;"><code class="javascript hljs" node="[object Object]">;<span class="hljs-function">() =&gt;</span> expression
+</code></pre>
+<h3>Example:</h3>
+<pre style="background-color: rgb(245, 245, 245); padding: 12px; border-radius: 4px; overflow-x: auto;"><code class="javascript hljs" node="[object Object]"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>]
+<span class="hljs-keyword">const</span> squaresOfEvenNumbers = numbers
+  .filter(<span class="hljs-function">(<span class="hljs-params">ele</span>) =&gt;</span> ele % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>)
+  .map(<span class="hljs-function">(<span class="hljs-params">ele</span>) =&gt;</span> ele ** <span class="hljs-number">2</span>)
+<span class="hljs-built_in">console</span>.log(squaresOfEvenNumbers)
+</code></pre>
+<h2>De-structuring</h2>
+<h3>Arrays</h3>
+<pre style="background-color: rgb(245, 245, 245); padding: 12px; border-radius: 4px; overflow-x: auto;"><code class="javascript hljs" node="[object Object]"><span class="hljs-keyword">let</span> [firstName, lastName] = [<span class="hljs-string">"Foo"</span>, <span class="hljs-string">"Bar"</span>]
+</code></pre>
+<h3>Objects</h3>
+<pre style="background-color: rgb(245, 245, 245); padding: 12px; border-radius: 4px; overflow-x: auto;"><code class="javascript hljs" node="[object Object]"><span class="hljs-keyword">let</span> { firstName, lastName } = {
+  <span class="hljs-attr">firstName</span>: <span class="hljs-string">"Foo"</span>,
+  <span class="hljs-attr">lastName</span>: <span class="hljs-string">"Bar"</span>,
+}
+</code></pre>
+<h3>rest(...) operator</h3>
+<pre style="background-color: rgb(245, 245, 245); padding: 12px; border-radius: 4px; overflow-x: auto;"><code class="javascript hljs" node="[object Object]"><span class="hljs-keyword">const</span> { title, firstName, lastName, ...rest } = record
+</code></pre>
+<h3>Spread(...) operator</h3>
+<pre style="background-color: rgb(245, 245, 245); padding: 12px; border-radius: 4px; overflow-x: auto;"><code class="javascript hljs" node="[object Object]"><span class="hljs-comment">//Object spread</span>
+<span class="hljs-keyword">const</span> post = {
+  ...options,
+  <span class="hljs-attr">type</span>: <span class="hljs-string">"new"</span>,
+}
+<span class="hljs-comment">//array spread</span>
+<span class="hljs-keyword">const</span> users = [...adminUsers, ...normalUsers]
+</code></pre>
+<h2>Functions</h2>
+<pre style="background-color: rgb(245, 245, 245); padding: 12px; border-radius: 4px; overflow-x: auto;"><code class="javascript hljs" node="[object Object]"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greetings</span>(<span class="hljs-params">{ name = <span class="hljs-string">"Foo"</span> } = {}</span>) </span>{
+  <span class="hljs-comment">//Defaulting name to Foo</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>!`</span>)
+}
+
+greet() <span class="hljs-comment">// Hello Foo</span>
+greet({ <span class="hljs-attr">name</span>: <span class="hljs-string">"Bar"</span> }) <span class="hljs-comment">// Hi Bar</span>
+</code></pre>
+<h2>Loops</h2>
+<h3>1. If:</h3>
+<p>IF is used to execute a block of code based on a condition.</p>
+<h3>Syntax</h3>
+<pre style="background-color: rgb(245, 245, 245); padding: 12px; border-radius: 4px; overflow-x: auto;"><code class="javascript hljs" node="[object Object]"><span class="hljs-keyword">if</span> (condition) {
+  <span class="hljs-comment">// code</span>
+}
+</code></pre>
+<h3>2. If-Else:</h3>
+<p>Else part is used to execute the block of code when the condition fails.</p>
+<h3>Syntax</h3>
+<pre style="background-color: rgb(245, 245, 245); padding: 12px; border-radius: 4px; overflow-x: auto;"><code class="javascript hljs" node="[object Object]"><span class="hljs-keyword">if</span> (condition) {
+  <span class="hljs-comment">// code</span>
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-comment">// code</span>
+}
+</code></pre>
+<h3>3. Switch:</h3>
+<p>Switch is used to replace nested If-Else statements.</p>
+<h3>Syntax</h3>
+<pre style="background-color: rgb(245, 245, 245); padding: 12px; border-radius: 4px; overflow-x: auto;"><code class="javascript hljs" node="[object Object]"><span class="hljs-keyword">switch</span>(condition){
+    <span class="hljs-keyword">case</span> <span class="hljs-string">'value1'</span> :
+        <span class="hljs-comment">//code</span>
+        [<span class="hljs-keyword">break</span>;]
+    <span class="hljs-keyword">case</span> <span class="hljs-string">'value2'</span> :
+        <span class="hljs-comment">//code</span>
+        [<span class="hljs-keyword">break</span>;]
+    .......
+    <span class="hljs-attr">default</span> :
+        <span class="hljs-comment">//code</span>
+        [<span class="hljs-keyword">break</span>;]
+}
+</code></pre>
+<h3>4. For</h3>
+<p>For loop is used to iterate a set of statements based on a condition.</p>
+<pre style="background-color: rgb(245, 245, 245); padding: 12px; border-radius: 4px; overflow-x: auto;"><code class="javascript hljs" node="[object Object]"><span class="hljs-keyword">for</span> (Initialization; Condition; Increment / decrement) {
+  <span class="hljs-comment">//code</span>
+}
+</code></pre>
+<h3>5. While</h3>
+<p>While is also used to iterate a set of statements based on a condition. Usually while is preferred when number of iterations are not known in advance.</p>
+<pre style="background-color: rgb(245, 245, 245); padding: 12px; border-radius: 4px; overflow-x: auto;"><code class="javascript hljs" node="[object Object]"><span class="hljs-keyword">while</span> (condition) {
+  <span class="hljs-comment">// code</span>
+}
+</code></pre>
+<h3>6. Do-While</h3>
+<p>Do-while is also used to iterate a set of statements based on a condition. It is mostly used when you need to execute the statements atleast once.</p>
+<pre style="background-color: rgb(245, 245, 245); padding: 12px; border-radius: 4px; overflow-x: auto;"><code class="javascript hljs" node="[object Object]"><span class="hljs-keyword">do</span> {
+  <span class="hljs-comment">// code</span>
+} <span class="hljs-keyword">while</span> (condition)
+</code></pre>
+<h2>Classes</h2>
+<p>ES6 introduced classes along with OOPS concepts in JS. Class is similar to a function which you can think like kind of template which will get called when ever you initialize class.</p>
+<h2>Syntax:</h2>
+<pre style="background-color: rgb(245, 245, 245); padding: 12px; border-radius: 4px; overflow-x: auto;"><code class="javascript hljs" node="[object Object]"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">className</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> { ... } <span class="hljs-comment">//Mandatory Class method</span>
+  <span class="hljs-function"><span class="hljs-title">method1</span>(<span class="hljs-params"></span>)</span> { ... }
+  <span class="hljs-function"><span class="hljs-title">method2</span>(<span class="hljs-params"></span>)</span> { ... }
+  ...
+}
+</code></pre>
+<h2>Example:</h2>
+<pre style="background-color: rgb(245, 245, 245); padding: 12px; border-radius: 4px; overflow-x: auto;"><code class="javascript hljs" node="[object Object]"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Mobile</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">model</span>)</span> {
+    <span class="hljs-built_in">this</span>.name = model
+  }
+}
+
+mbl = <span class="hljs-keyword">new</span> Mobile(<span class="hljs-string">"iPhone"</span>)
+</code></pre></div></div><footer class="bg-[#1b1642] dark:bg-black text-white pb-5 pt-15" style="margin-top: 60px;"><div class="mx-auto max-w-screen-2xl px-4"><div class="grid grid-cols-1 gap-8 md:grid-cols-12"><div class="md:col-span-3"><h6 class="mb-4 text-lg font-semibold text-gray-400">OneCompiler.com</h6><div class="flex flex-col gap-1.5"><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/about">About</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/customer-use-cases">Use Cases</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/contact">Contact</a></div><div class="mt-4 flex flex-col gap-1.5"><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/users">Users</a><a href="https://status.onecompiler.com/" target="_blank" rel="noopener noreferrer" class="text-sm !text-gray-400 hover:!text-white transition-colors">Status</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/pricing">Pricing</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/about#refund-policy">Refund Policy</a></div><div class="mt-4 flex flex-col gap-1.5"><a href="https://github.com/onecompiler" target="_blank" rel="noopener noreferrer" class="text-sm !text-gray-400 hover:!text-white transition-colors">GitHub</a><a href="https://www.linkedin.com/company/onecompiler" target="_blank" rel="noopener noreferrer" class="text-sm !text-gray-400 hover:!text-white transition-colors">LinkedIn</a><a href="https://www.facebook.com/onecompiler" target="_blank" rel="noopener noreferrer" class="text-sm !text-gray-400 hover:!text-white transition-colors">Facebook</a><a href="https://www.instagram.com/onecompiler" target="_blank" rel="noopener noreferrer" class="text-sm !text-gray-400 hover:!text-white transition-colors">Instagram</a><a href="https://twitter.com/OneCompilerHQ" target="_blank" rel="noopener noreferrer" class="text-sm !text-gray-400 hover:!text-white transition-colors">Twitter</a></div></div><div class="md:col-span-6"><h6 class="mb-4 text-lg font-semibold text-gray-400">Languages</h6><div class="grid grid-cols-2 gap-x-4 gap-y-1.5 sm:grid-cols-3 lg:grid-cols-4"><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/python">Python</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/java">Java</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/c">C</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/cpp">C++</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/javascript">JavaScript</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/lua">Lua</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/php">PHP</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/nodejs">NodeJS</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/csharp">C#</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/assembly">Assembly</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/bash">Bash</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/vb">Visual Basic (VB.NET)</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/kotlin">Kotlin</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/pascal">Pascal</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/ruby">Ruby</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/groovy">Groovy</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/scala">Scala</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/prolog">Prolog</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/tcl">Tcl</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/typescript">TypeScript</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/jshell">JShell</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/haskell">Haskell</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/ada">Ada</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/commonlisp">CommonLisp</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/d">D</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/elixir">Elixir</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/erlang">Erlang</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/fsharp">F#</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/fortran">Fortran</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/python2">Python2</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/perl">Perl</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/go">Go</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/r">R</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/racket">Racket</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/ocaml">OCaml</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/basic">Basic</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/html">HTML</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/react">React</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/vue">Vue</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/angular">Angular</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/materialize">Materialize</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/bootstrap">Bootstrap</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/tailwindcss">Tailwind CSS</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/htmx">HTMX</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/alpinejs">Alpine.js</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/chartjs">Chart.js</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/d3js">D3.js</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/jquery">JQuery</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/foundation">Foundation</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/bulma">Bulma</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/uikit">Uikit</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/semanticUI">Semantic UI</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/skeleton">Skeleton</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/milligram">Milligram</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/paperCss">PaperCSS</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/backbonejs">BackboneJS</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/sh">sh (Shell Script)</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/clojure">Clojure</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/cobol">Cobol</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/rust">Rust</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/swift">Swift</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/objectivec">Objective-C</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/octave">Octave</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/text">Text</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/brainfk">BrainFK</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/coffeescript">CoffeeScript</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/ejs">EJS</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/dart">Dart</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/deno">Deno</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/bun">Bun</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/crystal">Crystal</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/julia">Julia</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/zig">Zig</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/awk">AWK</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/ispc">ISPC</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/smalltalk">Smalltalk</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/nim">Nim</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/scheme">Scheme</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/j">J</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/v">V</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/raku">Raku</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/verilog">Verilog</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/haxe">Haxe</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/forth">Forth</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/icon">Icon</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/odin">Odin</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/mysql">MySQL</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/oracle">Oracle Database</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/postgresql">PostgreSQL</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/mongodb">MongoDB</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/sqlite">SQLite</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/redis">Redis</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/mariadb">MariaDB</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/plsql">Oracle PL/SQL</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/sqlserver">Microsoft SQL Server</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/cassandra">Cassandra</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/questdb">QuestDB</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/duckdb">DuckDB</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/surrealdb">SurrealDB</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/firebird">Firebird</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/clickhouse">ClickHouse</a></div></div><div class="md:col-span-3"><h6 class="mb-4 text-lg font-semibold text-gray-400">More</h6><div class="flex flex-col gap-1.5"><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/studio">Studio</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/orgs">Orgs</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/apis">API</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/apis/pricing">Pricing</a></div><div class="mt-4 flex flex-col gap-1.5"><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/cheatsheets">Cheatsheets</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/tutorials">Tutorials</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/tools">Tools</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/ai">AI Tools</a><a class="text-sm !text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/stats">Stats</a></div></div></div><div class="mt-10 text-center text-gray-400"><p>© Copyright 2026 One Compiler Pvt. Ltd. | <a class="!text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/privacy-policy">Privacy Policy</a> | <a class="!text-gray-400 hover:!text-white transition-colors" href="https://onecompiler.com/terms-and-conditions">Terms &amp; Conditions</a></p></div></div></footer></div></body></html>
