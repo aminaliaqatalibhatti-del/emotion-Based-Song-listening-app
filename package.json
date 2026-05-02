@@ -1,0 +1,28 @@
+{
+  "name": "emotion-based-song-listening-app",
+  "version": "1.0.0",
+  "description": "An AI-powered emotion-based application that listens to user mood and suggests personalized music and comforting messages. It not only recommends based on emotions but also reads responses aloud and saves user mood history for future tracking and improved recommendations over time.",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild app/script.js --bundle --outfile=app/script.bundle.js --format=iife",
+    "dev": "esbuild app/script.js --bundle --outfile=app/script.bundle.js --format=iife --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aminaliaqatalibhatti-del/emotion-Based-Song-listening-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aminaliaqatalibhatti-del/emotion-Based-Song-listening-app/issues"
+  },
+  "homepage": "https://github.com/aminaliaqatalibhatti-del/emotion-Based-Song-listening-app#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0"
+  }
+}

@@ -1,0 +1,5 @@
+# Dependencies
+node_modules/
+
+# Build artifacts (keep the bundled file for deployment)
+# We're NOT ignoring app/script.bundle.js since it's needed for deployment
